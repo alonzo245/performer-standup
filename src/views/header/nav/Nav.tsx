@@ -5,8 +5,10 @@ import { FaBars } from 'react-icons/fa';
 import { useScreenSize } from '../../../hooks/useScreenSize';
 import Colors from '../../../theme/Colors';
 import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
+import topology from '../../../config/topology';
 
 const Nav: FC = () => {
+    const links = topology();
     const { width } = useScreenSize();
     const [open, setOpen] = useState(false);
 
@@ -18,7 +20,8 @@ const Nav: FC = () => {
 
     return (
         <Container>
-            <Logo src={"/images/logo.png"} alt="Full-Stack Developer" />
+            
+            <Logo src={`${links.baseUrl}/images/logo.png`} alt="Full-Stack Developer" />
             <NavList show={open}>
                 <li>
                     <StyledAnchorLink href="#about" onClick={() => setOpen(false)}>
