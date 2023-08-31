@@ -43,11 +43,12 @@ const H5 = styled.h5`
     color: white;
     font-weight: bolder;
     font-size: 40px;
+    margin: 10px;
 `;
 
 const P = styled.footer`
     color: white;
-margin-top: 10px;
+margin: 10px;
 `;
 
 const Container = styled.footer<{ theme: ThemeType }>`
@@ -58,5 +59,5 @@ const Container = styled.footer<{ theme: ThemeType }>`
     background-color: ${(p) => THEMES[p.theme.themeName]?.footerBackground};
     color: white;
     text-align: center;
-    padding: 80px;
+    padding: 10px;
 `;

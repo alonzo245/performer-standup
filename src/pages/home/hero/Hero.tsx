@@ -18,9 +18,14 @@ const Hero: React.FC = () => {
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
         <P>מופע סטנדאפ</P>
-        <StyledAnchorLink href="#about" theme={theme}>
-          מי אני
-        </StyledAnchorLink>
+        <div style={{display:"flex"}}>
+          <StyledAnchorLink href="#about" theme={theme}>
+            מי אני
+          </StyledAnchorLink>
+          <StyledAnchorLink href="#contact-me" theme={theme}>
+            צרו קשר
+          </StyledAnchorLink>
+        </div>
       </Row>
       <RowContact>
         <Alon />
@@ -178,6 +183,10 @@ const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType }>`
   justify-content: center;
   align-items: center;
   font-weight: bold;
+
+  &:last-child{
+    margin-inline-start: 20px;
+  }
 
   ${DESKTOP_MQ} {
     width: 200px;
