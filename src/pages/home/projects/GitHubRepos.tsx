@@ -16,7 +16,6 @@ const GitHubRepos: React.FC = () => {
     const { width } = useScreenSize();
     const { theme } = useThemeState();
     const [items, setItems] = useState<Array<any>>([]);
-    console.log("🚀 ~ file: GitHubRepos.tsx:19 ~ items:", items)
     const [hasMore, setHasMore] = useState(true);
 
     const {

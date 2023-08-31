@@ -40,3 +40,43 @@ body {
 a {
   color: black;
 }
+
+/* ANT */
+.ant-pagination {
+  display: flex;
+  width: 100%;
+  direction: ltr;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+}
+
+.ant-pagination .ant-pagination-item {
+  border-radius: 20px;
+  /* background-color: ${(p) => THEMES[p.theme.themeName]?.paginationButton}; */
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.ant-pagination li {
+  border-radius: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0px 15px;
+}
+
+.ant-pagination a {
+  color: white;
+  line-height: 2.3;
+}
+
+.ant-pagination .ant-pagination-item-active {
+  border: 1px solid white;
+}
+.ant-pagination .ant-pagination-next,
+.ant-pagination .ant-pagination-prev,
+.ant-pagination .ant-pagination-item-link {
+  background-color: unset !important;
+}
