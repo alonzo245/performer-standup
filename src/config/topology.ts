@@ -12,7 +12,7 @@ const topology = () => {
     const links: ITopology = {
         production: {
             baseUrl: 'https://alonzo245.github.io/performer-standup',
-            gitHubRepos: '/repos.json',
+            gitHubRepos: '/api/repos.json',
         },
         development: {
             baseUrl: 'http://localhost:3000',
