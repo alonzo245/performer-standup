@@ -11,7 +11,7 @@ const Home: FC = () => {
     const { isLoading } = useQuery(
         'repos',
         () => {
-            return fetch(links.gitHubRepos).then((res) => res.json());
+            return fetch(`${links.baseUrl}${links.gitHubRepos}`).then((res) => res.json());
         },
         {
             onSuccess: (data) => {
