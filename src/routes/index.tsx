@@ -24,7 +24,7 @@ const IndexRouter: React.FC = () => {
                         <Switch>
                             <Route
                                 exact
-                                path={[`${process.env.PUBLIC_URL}/`, `${process.env.PUBLIC_URL}/projects`]}
+                                path={[`${process.env.PUBLIC_URL}/performer-standup`, `${process.env.PUBLIC_URL}/performer-standup/projects`]}
                                 component={Home}
                             />
                             <Route component={NotFound} />
