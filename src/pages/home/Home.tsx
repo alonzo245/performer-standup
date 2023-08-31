@@ -30,7 +30,7 @@ const Home: FC = () => {
     return isLoading ? null : (
         <>
             <AboutMe />
-            {/* <GitHubRepos /> */}
+            <GitHubRepos />
         </>
     );
 };
