@@ -1,11 +1,11 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { NotFound } from '../pages';
+import { Home, NotFound } from '../pages';
 import { defaultQueryFn } from '../config/request';
 import { Layout } from '../views';
 
-const Home = lazy(() => import('../pages/home/Home'));
+// const Home = lazy(() => import('../pages/home/Home'));
 
 const queryClient = new QueryClient({
     defaultOptions: {

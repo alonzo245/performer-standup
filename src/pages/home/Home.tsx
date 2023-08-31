@@ -16,6 +16,7 @@ const Home: FC = () => {
         {
             onSuccess: (data) => {
                 const repos = (data || []).map((item: any) => {
+                    console.log("🚀 ~ file: Home.tsx:19 ~ repos ~ data:", data)
                     return {
                         title: (item?.name || '').replaceAll(/-|_/gi, ' '),
                         description: item?.description,
