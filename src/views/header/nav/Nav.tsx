@@ -10,7 +10,7 @@ import topology from "../../../config/topology";
 const Nav: FC = () => {
   const links = topology();
   const { width } = useScreenSize();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     if (width > mobileThreshold) {
@@ -19,7 +19,7 @@ const Nav: FC = () => {
   }, [width]);
 
   return (
-    <Container>
+    <Container show={open}>
       <Logo
         src={`${links.baseUrl}/images/logo.png`}
         alt="Full-Stack Developer"
@@ -60,15 +60,37 @@ const Nav: FC = () => {
 
 export default Nav;
 
+const Container = styled.nav<{ show: boolean }>`
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${(p) => (p.show ? `#000000` : `${Colors.black}50`)};
+  height: 60px;
+
+  ${DESKTOP_MQ} {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
+    height: auto;
+  }
+`;
+
 const NavList = styled.ul<{ show: boolean }>`
   display: ${(p) => (p.show ? "flex" : "none")};
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* background-color: #2b2c38; */
   margin: 0px;
   margin-top: 111px;
-  padding-bottom: 30px;
+  padding: 0 0 20px 0;
+
+  position: ${(p) => (p.show ? "absolute" : "unset")};
+  top: 60px;
+  margin: 0;
+  width: 100%;
+  background-color: #000000;
+  z-index: 2;
 
   ${DESKTOP_MQ} {
     flex-direction: unset;
@@ -112,21 +134,7 @@ const StyledAnchorLink = styled(AnchorLink)`
   color: ${Colors.white};
 `;
 
-const Container = styled.nav`
-  display: flex;
 
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${Colors.black}50;
-  height: 60px;
-
-  ${DESKTOP_MQ} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
-    height: auto;
-  }
-`;
 
 const Hamburger = styled.button`
   cursor: pointer;

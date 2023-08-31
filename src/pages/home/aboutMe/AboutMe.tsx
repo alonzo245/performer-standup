@@ -1,33 +1,36 @@
 import styled from "@emotion/styled";
+import topology from "../../../config/topology";
 import { useThemeState } from "../../../context/useThemeState";
 import { THEMES, ThemeType } from "../../../theme";
 import Colors from "../../../theme/Colors";
 import { DESKTOP_MQ } from "../../../theme/theme.constants";
 
 const AboutMe: React.FC = () => {
+  const links = topology();
   const { theme } = useThemeState();
 
   return (
     <Container id="about">
       <H2 theme={theme}>מי אני</H2>
       <Row>
-        <Img src={"/images/img2.png"} alt="אלון אלוש" />
+        <Img src={`${links.baseUrl}/images/img2.png`} alt="אלון אלוש" />
         <Article>
-        <P>
-          אלון אלוש הוא הייטקיסט וסטנדאפיסט בלב ובנשמה, מצליח למצוא את הצחוק בכל
-          מקום ובכל זמן. הבמה היא הבית השני שלו, המקום שבו הוא יגרום לכם לצחוק
-          על כל דבר שמעניין אותו.
-        </P>
-        <P>
-          אלון, אוהב לספר סיפורים מהחיים השגרתיים, על הצד המופרע שכולנו מדחיקים,
-          יש לו יכולת לראות את הצדדים ההומוריסטים במצבים שמאתגרים את כולנו ביום
-          יום, הוא חושף את הצד הבלתי רשמי שבנו, וגורם לכל אחד לחייך.
-        </P>
-        <P>
-          הצחוק הוא כלי התקשורת החברתי שלו, והבמה היא הנתיב שמאפשר לו להעביר את
-          המסר לעולם. עם המיקרופון ביד, במה וקהל הוא מוכן להוציא את הצחוק המרגש
-          שבכולנו.
-        </P>
+          <P>
+            אלון אלוש הוא הייטקיסט וסטנדאפיסט בלב ובנשמה, מצליח למצוא את הצחוק
+            בכל מקום ובכל זמן. הבמה היא הבית השני שלו, המקום שבו הוא יגרום לכם
+            לצחוק על כל דבר שמעניין אותו.
+          </P>
+          <P>
+            אלון, אוהב לספר סיפורים מהחיים השגרתיים, על הצד המופרע שכולנו
+            מדחיקים, יש לו יכולת לראות את הצדדים ההומוריסטים במצבים שמאתגרים את
+            כולנו ביום יום, הוא חושף את הצד הבלתי רשמי שבנו, וגורם לכל אחד
+            לחייך.
+          </P>
+          <P>
+            הצחוק הוא כלי התקשורת החברתי שלו, והבמה היא הנתיב שמאפשר לו להעביר
+            את המסר לעולם. עם המיקרופון ביד, במה וקהל הוא מוכן להוציא את הצחוק
+            המרגש שבכולנו.
+          </P>
         </Article>
       </Row>
     </Container>
@@ -63,7 +66,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
     right: 0;
   }
 
-  ${DESKTOP_MQ}{
+  ${DESKTOP_MQ} {
     text-align: start;
   }
 `;
@@ -74,10 +77,12 @@ const Img = styled.img`
   margin-top: 20px;
   margin-bottom: 20px;
   border: 5px solid yellow;
+  margin-right: 0px;
 
   ${DESKTOP_MQ} {
     margin-top: 0;
     margin-bottom: 0;
+    margin-right: 20px;
   }
 `;
 
@@ -108,7 +113,7 @@ const P = styled.p`
     font-weight: 300;
     font-size: 25px;
   }
-  `;
+`;
 const Article = styled.article`
   margin-bottom: 10px;
   font-size: 25px;

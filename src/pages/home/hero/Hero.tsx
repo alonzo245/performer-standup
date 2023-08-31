@@ -61,9 +61,9 @@ const Img = styled.img`
   transform-origin: bottom center;
   position: absolute;
   bottom: 0;
-  left: 25%;
+  left: 55%;
   z-index: 0;
-  transform: scale(1.3) translateY(90px);
+  transform: scale(1.3) translateY(90px) translateX(-42%);
 
   ${DESKTOP_MQ} {
     transform-origin: bottom center;
