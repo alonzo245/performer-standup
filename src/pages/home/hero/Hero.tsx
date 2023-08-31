@@ -188,7 +188,7 @@ const RowContact = styled.div`
     }
 `;
 
-const Link = styled.a`
-    display: block;
-    margin: 20px;
-`;
+// const Link = styled.a`
+//     display: block;
+//     margin: 20px;
+// `;

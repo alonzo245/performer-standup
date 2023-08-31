@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import AvatarImg from "../../../assets/images/avatar.jpeg";
 import { useThemeState } from "../../../context/useThemeState";
 import { THEMES, ThemeType } from "../../../theme";
 import Colors from "../../../theme/Colors";

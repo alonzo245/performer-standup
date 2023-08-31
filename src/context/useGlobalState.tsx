@@ -1,4 +1,4 @@
-import React, { FC, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 
 interface IGlobal {
   github: { repos: Array<any> };

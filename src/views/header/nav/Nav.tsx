@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 import { FC, useEffect, useState } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { FaBars } from 'react-icons/fa';
-import logo from '../../../assets/images/logo.svg';
-import ThemeToggle from '../../../components/themeToggle/ThemToggle';
 import { useScreenSize } from '../../../hooks/useScreenSize';
 import Colors from '../../../theme/Colors';
 import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Nav: FC = () => {
     const { width } = useScreenSize();

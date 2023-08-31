@@ -1,8 +1,5 @@
 import styled from "@emotion/styled";
 import { FC } from "react";
-import { AiFillGithub } from "react-icons/ai";
-import { THEMES, ThemeType } from "../../../../theme";
-import Colors from "../../../../theme/Colors";
 import { DESKTOP_MQ } from "../../../../theme/theme.constants";
 interface Props {
   image: string;
@@ -49,53 +46,53 @@ const Iframe = styled.iframe`
 //   }
 // `;
 
-const Link = styled.a<{ theme: ThemeType }>`
-  display: block;
-  text-decoration: none;
-  background: ${(p) => p.theme.button};
-  padding: 10px;
-  border-radius: 10px;
-  color: ${Colors.white};
-  align-self: flex-end;
-  width: 100%;
+// const Link = styled.a<{ theme: ThemeType }>`
+//   display: block;
+//   text-decoration: none;
+//   background: ${(p) => p.theme.button};
+//   padding: 10px;
+//   border-radius: 10px;
+//   color: ${Colors.white};
+//   align-self: flex-end;
+//   width: 100%;
 
-  &:hover {
-    color: unset;
-    background-color: ${(p) => THEMES[p.theme.themeName]?.cardButtonHover};
-  }
-`;
+//   &:hover {
+//     color: unset;
+//     background-color: ${(p) => THEMES[p.theme.themeName]?.cardButtonHover};
+//   }
+// `;
 
-const H3 = styled.h3<{ theme: ThemeType }>`
-  color: ${(p) => THEMES[p.theme.themeName]?.h3};
-  margin: 15px 0;
-  font-size: 15px;
-  font-weight: 300;
-  text-transform: capitalize;
-`;
+// const H3 = styled.h3<{ theme: ThemeType }>`
+//   color: ${(p) => THEMES[p.theme.themeName]?.h3};
+//   margin: 15px 0;
+//   font-size: 15px;
+//   font-weight: 300;
+//   text-transform: capitalize;
+// `;
 
-const StyledAiFillGithub = styled(AiFillGithub)`
-  position: absolute;
-  top: 120px;
-  right: 0px;
-  background-color: black;
-  border-radius: 30px;
-`;
+// const StyledAiFillGithub = styled(AiFillGithub)`
+//   position: absolute;
+//   top: 120px;
+//   right: 0px;
+//   background-color: black;
+//   border-radius: 30px;
+// `;
 
-const UpdatedAt = styled.p`
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 30x0;
-`;
+// const UpdatedAt = styled.p`
+//   font-size: 12px;
+//   font-style: italic;
+//   font-weight: 30x0;
+// `;
 
-const P = styled.p`
-  margin: 0;
-  font-size: 15px;
-  font-weight: 300;
-`;
+// const P = styled.p`
+//   margin: 0;
+//   font-size: 15px;
+//   font-weight: 300;
+// `;
 
-const Img = styled.img`
-  margin-top: 25px;
-  margin-bottom: 20px;
-  width: 130px;
-  border-radius: 125px;
-`;
+// const Img = styled.img`
+//   margin-top: 25px;
+//   margin-bottom: 20px;
+//   width: 130px;
+//   border-radius: 125px;
+// `;
