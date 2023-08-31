@@ -1,8 +1,8 @@
 {
-  "name": "standup-performer",
+  "name": "performer-standup",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://alonzo245.github.io/standup-performer",
+  "homepage": "https://alonzo245.github.io/performer-standup",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
