@@ -82,7 +82,7 @@ const Alon = styled.div`
   bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -200px;
+  bottom: -210px;
 
   ${DESKTOP_MQ} {
     transform: unset;

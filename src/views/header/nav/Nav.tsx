@@ -10,7 +10,7 @@ import topology from "../../../config/topology";
 const Nav: FC = () => {
   const links = topology();
   const { width } = useScreenSize();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (width > mobileThreshold) {
