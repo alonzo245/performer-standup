@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/standup-performer/static/css/main.82d2e5f6.css",
+    "main.js": "/standup-performer/static/js/main.650ad3c1.js",
+    "static/js/787.9997ad47.chunk.js": "/standup-performer/static/js/787.9997ad47.chunk.js",
+    "index.html": "/standup-performer/index.html",
+    "main.82d2e5f6.css.map": "/standup-performer/static/css/main.82d2e5f6.css.map",
+    "main.650ad3c1.js.map": "/standup-performer/static/js/main.650ad3c1.js.map",
+    "787.9997ad47.chunk.js.map": "/standup-performer/static/js/787.9997ad47.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82d2e5f6.css",
+    "static/js/main.650ad3c1.js"
+  ]
+}
