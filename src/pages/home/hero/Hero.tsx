@@ -8,6 +8,7 @@ import { DESKTOP_MQ } from "../../../theme/theme.constants";
 import topology from "../../../config/topology";
 
 export const FACEBOOK_LINK = "https://www.facebook.com/alonalush";
+export const WHATSAPP_LINK = "whatsapp://send?text=שלום אלון פניתי בנושא מופע סטנדאפ אנא חזור אליי.&phone=972526299978";
 
 const Hero: React.FC = () => {
   const links = topology();
