@@ -52,16 +52,20 @@ const Hero: React.FC = () => {
 export default Hero;
 
 const Img = styled.img`
-  height: 100%;
+  height: 85%;
   transform-origin: bottom center;
   position: absolute;
   bottom: 0;
-  left: 0%;
+  left: 25%;
   z-index: 0;
+  transform: scale(1.3) translateY(90px);
 
   ${DESKTOP_MQ} {
+    transform-origin: bottom center;
     height: 120%;
     left: 10%;
+    transform: unset;
+
   }
 `;
 
@@ -86,7 +90,7 @@ const Alon = styled.div`
 
 const Container = styled.div`
   display: flex;
-  height: calc(100% - 100px);
+  height: calc(100% - 60px);
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
@@ -106,13 +110,14 @@ export const StyledIoDocumentAttachOutline = styled(IoDocumentAttachOutline)`
 
 const H1 = styled.h1<{ theme: ThemeType }>`
   font-weight: bolder;
-  font-size: 70px;
+  font-size: 60px;
   margin-top: 10px;
   color: ${(p) => THEMES[p.theme.themeName]?.h1};
   text-align: center;
   position: relative;
 
   ${DESKTOP_MQ} {
+    font-size: 70px;
     margin: 0;
     margin-top: 80px;
     font-size: 120px;
@@ -162,20 +167,26 @@ const Row = styled.div`
 `;
 
 const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType }>`
-  width: 200px;
-  height: 55px;
+  width: 120px;
+  height: 35px;
   border-radius: 20px;
   background: yellow;
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 300;
-  padding: 5px 20px;
+  padding: 5px 10px;
   color: ${Colors.black};
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  
+
+
+  ${DESKTOP_MQ} {
+    width: 200px;
+  height: 55px;  }
 `;
 
 const RowContact = styled.div`
