@@ -4,6 +4,7 @@ import { useThemeState } from '../../context/useThemeState';
 import { THEMES, ThemeType } from '../../theme';
 import { Footer } from '../footer';
 import { Header } from '../header';
+import ScrollToTop from 'react-scroll-to-top';
 
 interface Props {
     children: JSX.Element & React.ReactNode;
@@ -13,6 +14,7 @@ const Layout: React.FC<Props> = ({ children }) => {
 
     return (
         <Container theme={theme}>
+            <ScrollToTop smooth color="#a20000" />
             <Header />
             {children}
             <Footer />

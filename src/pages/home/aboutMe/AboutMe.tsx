@@ -37,7 +37,7 @@ const AboutMe: React.FC = () => {
 export default AboutMe;
 
 const Container = styled.section`
-  padding: 40px;
+  padding: 20px;
   max-width: 1400px;
   margin: 0 auto;
 
@@ -51,7 +51,6 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   display: block;
   font-size: 50px;
   font-weight: bolder;
-  text-align: center;
   position: relative;
 
   &::after {
@@ -63,12 +62,15 @@ const H2 = styled.h2<{ theme: ThemeType }>`
     left: 0;
     right: 0;
   }
+
+  ${DESKTOP_MQ}{
+    text-align: start;
+  }
 `;
 
 const Img = styled.img`
   width: 300px;
   border-radius: 150px;
-  margin-left: 30px;
   margin-top: 20px;
   margin-bottom: 20px;
   border: 5px solid yellow;
@@ -92,15 +94,19 @@ const Row = styled.div`
 
 const P = styled.p`
   margin-bottom: 30px;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 300;
   width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   ${DESKTOP_MQ} {
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 300;
-    
+    font-size: 25px;
   }
   `;
 const Article = styled.article`

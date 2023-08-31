@@ -137,7 +137,7 @@ const Container = styled.section`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding: 40px;
+  padding: 20px;
 `;
 
 const Crads = styled.div`

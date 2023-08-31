@@ -38,4 +38,5 @@ const Container = styled.header<{ theme: ThemeType; bgImage: string }>`
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: top center;
+  overflow: hidden;
 `;

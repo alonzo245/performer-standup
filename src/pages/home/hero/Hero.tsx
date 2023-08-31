@@ -65,7 +65,6 @@ const Img = styled.img`
     height: 120%;
     left: 10%;
     transform: unset;
-
   }
 `;
 
@@ -111,18 +110,15 @@ export const StyledIoDocumentAttachOutline = styled(IoDocumentAttachOutline)`
 const H1 = styled.h1<{ theme: ThemeType }>`
   font-weight: bolder;
   font-size: 60px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   color: ${(p) => THEMES[p.theme.themeName]?.h1};
   text-align: center;
   position: relative;
+  margin: 10px 0 0px 0;
 
   ${DESKTOP_MQ} {
-    font-size: 70px;
-    margin: 0;
-    margin-top: 80px;
     font-size: 120px;
     text-align: left;
-    margin-top: 0;
   }
 
   &::after {
@@ -141,6 +137,7 @@ const P = styled.p`
   font-weight: 300;
   margin-bottom: 10px;
   font-weight: bold;
+  margin: 0 0 15px 0;
 
   ${DESKTOP_MQ} {
     margin-bottom: 30px;
@@ -181,12 +178,12 @@ const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType }>`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  
-
 
   ${DESKTOP_MQ} {
     width: 200px;
-  height: 55px;  }
+    height: 55px;
+    font-size: 35px;
+  }
 `;
 
 const RowContact = styled.div`

@@ -1,8 +1,8 @@
 /* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
-*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+/* *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
-}
+} */
 
 /* Preferred box-sizing value */
 *,
@@ -35,10 +35,14 @@ textarea {
 body {
   font-family: 'Helvetica', sans-serif;
   direction: rtl;
+  background-color: black;
+  padding: 0;
+  margin: 0;
 }
 
 a {
   color: black;
+  text-decoration: unset;
 }
 
 /* ANT */

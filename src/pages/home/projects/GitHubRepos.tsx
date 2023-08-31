@@ -127,7 +127,7 @@ const Container = styled.section`
   flex-direction: column;
   text-align: center;
   align-items: center;
-  padding: 40px;
+  padding: 0px 20px 20px 20px;
 `;
 
 const Crads = styled.div`
@@ -146,7 +146,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   color: ${(p) => THEMES[p.theme.themeName]?.h2};
   font-size: 50px;
   font-weight: bolder;
-  margin: 40px 0 40px 0;
+  margin: 20px 0;
   display: block;
   text-align: center;
   position: relative;
@@ -159,5 +159,10 @@ const H2 = styled.h2<{ theme: ThemeType }>`
     bottom: 8px;
     left: 0;
     right: 0;
+  }
+
+  ${DESKTOP_MQ}{
+    margin: 40px 0 40px 0;
+
   }
 `;
