@@ -55,6 +55,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   font-size: 50px;
   font-weight: bolder;
   position: relative;
+  text-align: center;
 
   &::after {
     content: "מי אני";
