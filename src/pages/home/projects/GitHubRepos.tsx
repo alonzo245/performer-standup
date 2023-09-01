@@ -98,6 +98,7 @@ export default GitHubRepos;
 
 const StyledPagination = styled(Pagination)<{ theme: ThemeType }>`
   margin: 40px 0;
+  padding: 0;
   & .ant-pagination-item-link {
     border-radius: 20px;
     background-color: ${(p) => THEMES[p.theme.themeName]?.paginationButton};
@@ -105,7 +106,6 @@ const StyledPagination = styled(Pagination)<{ theme: ThemeType }>`
     border: none;
   }
 
-  margin: 40px 0;
   & li {
     border: none;
     border-radius: 20px;
