@@ -11,7 +11,7 @@ interface ITopology {
 const topology = () => {
     const links: ITopology = {
         production: {
-            baseUrl: 'https://alonzo245.github.io/performer-standup',
+            baseUrl: 'https://standup.alonalush.com/performer-standup',
             gitHubRepos: '/api/repos.json',
         },
         development: {
