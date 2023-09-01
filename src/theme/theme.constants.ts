@@ -1,4 +1,4 @@
-export const mobileThreshold = 800;
+export const mobileThreshold = 1022;
 export const MOBILE_MQ = `@media (max-width: ${mobileThreshold}px)`;
 export const DESKTOP_MQ = `@media (min-width: ${mobileThreshold}px)`;
 export const MOBILE = 'MOBILE' as const;

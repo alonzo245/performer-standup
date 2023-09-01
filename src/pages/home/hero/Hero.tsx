@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
     <Container theme={theme}>
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
-        <P>מופע סטנדאפ</P>
+        <P>סטנדאפיסט ומנחה</P>
         <div style={{display:"flex"}}>
           <StyledAnchorLink href="#about" theme={theme}>
             מי אני

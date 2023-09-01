@@ -56,6 +56,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   font-weight: bolder;
   position: relative;
   text-align: center;
+  margin: 10px auto;
 
   &::after {
     content: "מי אני";
@@ -69,6 +70,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
 
   ${DESKTOP_MQ} {
     text-align: start;
+    margin: 0;
   }
 `;
 

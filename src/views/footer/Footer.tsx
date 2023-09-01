@@ -11,16 +11,18 @@ const Footer: React.FC = () => {
   return (
     <Container id="contact-me" theme={theme}>
       <H5>אלון אלוש</H5>
-      <P>מופע סטנדאפ - יצירת קשר</P>
+      <P>בחרו כיצד ליצור איתי קשר</P>
       <Row>
         {/* <Link href={CV_LINK} data-tip data-for="cv">
                 <BsFacebook color='#fff' size={40} />
                 </Link> */}
         <Link href={WHATSAPP_LINK} data-tip data-for="github">
           <RiWhatsappFill color="#fff" size={45} />
+          <AltText>וואטסאפ</AltText>
         </Link>
         <Link href={FACEBOOK_LINK} target="_blank" data-tip data-for="github">
           <BsFacebook color="#fff" size={40} />
+          <AltText>פייסבוק</AltText>
         </Link>
 
         {/* <Link href={LINKEDIN_LINK} target="_blank" data-tip data-for="linkedin">
@@ -33,9 +35,18 @@ const Footer: React.FC = () => {
 
 export default Footer;
 
+const AltText = styled.div`
+  color: white;
+  margin-top: 10px;
+ 
+`;
 const Link = styled.a`
   display: block;
   margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const Row = styled.div`
@@ -53,7 +64,7 @@ const H5 = styled.h5`
 
 const P = styled.footer`
   color: white;
-  margin: 10px;
+  margin: 0px 10px 10px 10px;
 `;
 
 const Container = styled.footer<{ theme: ThemeType }>`
