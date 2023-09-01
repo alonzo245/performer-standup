@@ -2,7 +2,7 @@
   "name": "performer-standup",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://alonzo245.github.io/performer-standup",
+  "homepage": "https://standup.alonalush.com",
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
     "@emotion/react": "^11.4.1",
