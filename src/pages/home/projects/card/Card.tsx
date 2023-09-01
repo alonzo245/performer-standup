@@ -7,25 +7,41 @@ interface Props {
   description: string;
   link: string;
   updatedAt: string;
+  type: string;
 }
-const Card: FC<Props> = ({ image, title, description, link, updatedAt }) => {
+const Card: FC<Props> = ({ link, type }) => {
 //   const { theme } = useThemeState();
 
-  return (
-    <Iframe
-      src={link}
-      frameBorder="0"
-      allow="accelerometer; web-share"
-      allowFullScreen
-    />
-  );
+return type === "vertical" ? (
+  <IframeVertical
+    src={link}
+    frameBorder="0"
+    allow="accelerometer; web-share"
+    allowFullScreen
+  />
+) : (
+  <IframeLandscape
+    src={link}
+    frameBorder="0"
+    allow="accelerometer; web-share"
+    allowFullScreen
+  />
+);
 };
 
 export default Card;
 
-const Iframe = styled.iframe`
+const IframeLandscape = styled.iframe`
   width: 100%;
   max-width: 315px;
+  height: 215px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+`;
+
+const IframeVertical = styled.iframe`
+  width: 100%;
+  width: 315px;
   height: 500px;
   margin-bottom: 20px;
   border-radius: 20px;

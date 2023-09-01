@@ -23,7 +23,8 @@ const Home: FC = () => {
                     return {
                         title: (item?.name || '').replaceAll(/-|_/gi, ' '),
                         description: item?.description,
-                        link: item?.link
+                        link: item?.link,
+                        type: item?.type || ""
                     };
                 });
                 setGlobalState({ github: { repos: [...repos] } });
