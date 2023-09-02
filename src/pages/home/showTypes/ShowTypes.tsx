@@ -10,7 +10,7 @@ const AboutMe: React.FC = () => {
   const { theme } = useThemeState();
 
   return (
-    <Container id="about">
+    <Container id="shows-types">
       <H3 theme={theme}>סוגי מופעים</H3>
       <Row>
         <Article>
