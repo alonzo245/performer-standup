@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
-import { BsFacebook } from "react-icons/bs";
-import { FaTiktok, FaYoutubeSquare } from "react-icons/fa";
+import { BsFacebook, BsYoutube } from "react-icons/bs";
+import { FaTiktok } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
 import { useThemeState } from "../../context/useThemeState";
 import {
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           <AltText>פייסבוק</AltText>
         </Link>
         <Link href={YOUTUBE_LINK} target="_blank">
-          <FaYoutubeSquare size={30} color="#fff" />
+          <BsYoutube size={30} color="#fff" />
           <AltText>יוטיוב</AltText>
         </Link>
         <Link href={TIKTOK_LINK} target="_blank">

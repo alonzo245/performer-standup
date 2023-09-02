@@ -18,7 +18,10 @@ const AboutMe: React.FC = () => {
             <FaTheaterMasks size={40} color="yellow" />
           </Circle>
           <P size={30}>סטנדאפ אישי</P>
-          <P size={19}>מופע מרכזי מצחיק וסוחף שניתן להתאמה לפי אופי הקהל.</P>
+          <P size={19}>
+            מופע מצחיק עם הרבה הומור על החיים שלי ועל המהות שלנו בחיי היום היום,
+            ניתן להתאים את אופי המופע לפי דרישות מראש.
+          </P>
         </Article>
 
         <Article>
@@ -82,7 +85,7 @@ const H3 = styled.h3<{ theme: ThemeType }>`
   font-weight: bolder;
   position: relative;
   text-align: center;
-  margin: 0px auto 20px auto;
+  margin: 10px auto 0px auto;
 
   &::after {
     content: "סוגי מופעים";

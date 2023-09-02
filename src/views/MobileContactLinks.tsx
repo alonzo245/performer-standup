@@ -1,22 +1,20 @@
 import styled from "@emotion/styled";
 import { FC, useEffect, useState } from "react";
-import {
-  FaFacebookSquare,
-  FaTiktok,
-  FaWhatsappSquare,
-  FaYoutubeSquare,
-} from "react-icons/fa";
+import { FaFacebookSquare, FaTiktok } from "react-icons/fa";
+import { BsWhatsapp, BsYoutube } from "react-icons/bs";
 import {
   FACEBOOK_LINK,
   TIKTOK_LINK,
   WHATSAPP_LINK,
   YOUTUBE_LINK,
 } from "../pages/home/hero/Hero";
-import { DESKTOP_MQ } from "../theme/theme.constants";
+import { DESKTOP_MQ, mobileThreshold } from "../theme/theme.constants";
 import { useDebouncedCallback } from "use-debounce";
 import subscribe from "subscribe-event";
+import { useScreenSize } from "../hooks/useScreenSize";
 
 const MobileContactLinks: FC = () => {
+  const { width } = useScreenSize();
   const [iconsColor, setIconsColor] = useState("white");
   const [position, setPosition] = useState(window.pageYOffset);
 
@@ -24,7 +22,7 @@ const MobileContactLinks: FC = () => {
 
   const debounced = useDebouncedCallback(() => {
     setPosition(window.pageYOffset);
-  }, 200);
+  }, 100);
 
   useEffect(() => {
     const unsubscribe = subscribe(window, "scroll", debounced);
@@ -33,14 +31,14 @@ const MobileContactLinks: FC = () => {
     };
   }, []);
 
-  return !position ? null : (
+  return !position || width > mobileThreshold ? null : (
     <Container>
       <Row>
         <A href={WHATSAPP_LINK} target="_blank">
-          <FaWhatsappSquare size={size} color={iconsColor} />
+          <BsWhatsapp size={size} color={iconsColor} />
         </A>
         <A href={YOUTUBE_LINK} target="_blank">
-          <FaYoutubeSquare size={size} color={iconsColor} />
+          <BsYoutube size={size} color={iconsColor} />
         </A>
         <A href={TIKTOK_LINK} target="_blank">
           <FaTiktok size={size} color={iconsColor} />

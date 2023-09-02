@@ -5,9 +5,9 @@ import {
   FaBars,
   FaFacebookSquare,
   FaTiktok,
-  FaWhatsappSquare,
   FaYoutubeSquare,
 } from "react-icons/fa";
+import { BsWhatsapp, BsYoutube } from "react-icons/bs";
 import topology from "../../../config/topology";
 import { useScreenSize } from "../../../hooks/useScreenSize";
 import {
@@ -42,10 +42,10 @@ const Nav: FC = () => {
         {width > mobileThreshold && (
           <>
             <A href={WHATSAPP_LINK} target="_blank">
-              <FaWhatsappSquare size={30} color={iconsColor} />
+              <BsWhatsapp size={30} color={iconsColor} />
             </A>
             <A href={YOUTUBE_LINK} target="_blank">
-              <FaYoutubeSquare size={30} color={iconsColor} />
+              <BsYoutube size={30} color={iconsColor} />
             </A>
             <A href={TIKTOK_LINK} target="_blank">
               <FaTiktok size={30} color={iconsColor} />
@@ -78,11 +78,11 @@ const Nav: FC = () => {
             סרטונים
           </StyledAnchorLink>
         </li>
-        <li>
+        {/* <li>
           <StyledAnchorLink href="#contact-me" onClick={() => setOpen(false)}>
             הזמינו מופע
           </StyledAnchorLink>
-        </li>
+        </li> */}
         {/* {width > mobileThreshold && (
                     <li>
                         <ThemeToggle />
