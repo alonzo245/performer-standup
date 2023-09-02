@@ -88,4 +88,8 @@ const Container = styled.footer<{ theme: ThemeType }>`
   color: white;
   text-align: center;
   padding: 10px;
+  margin-bottom: 70px;
+  ${DESKTOP_MQ} {
+    margin-bottom: 0px;
+  }
 `;
