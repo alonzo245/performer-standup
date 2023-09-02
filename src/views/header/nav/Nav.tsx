@@ -24,31 +24,38 @@ const Nav: FC = () => {
   const links = topology();
   const { width } = useScreenSize();
   const [open, setOpen] = useState(false);
+  const [iconsColor, setIconsColor] = useState("white");
 
   useEffect(() => {
     if (width > mobileThreshold) {
       setOpen(false);
+      setIconsColor("white");
     }
+    setIconsColor("white");
   }, [width]);
 
   return (
     <Container show={open}>
       <LinksRow>
-        <A href={WHATSAPP_LINK} target="_blank">
-          <FaWhatsappSquare size={30} color="yellow" />
-        </A>
-        <A href={YOUTUBE_LINK} target="_blank">
-          <FaYoutubeSquare size={30} color="yellow" />
-        </A>
-        <A href={TIKTOK_LINK} target="_blank">
-          <FaTiktok size={30} color="yellow" />
-        </A>
         {/* <A href={""}>
-          <FaInstagramSquare size={30} color="yellow" />
+          <FaInstagramSquare size={30} color={iconsColor} />
         </A> */}
-        <A href={FACEBOOK_LINK} target="_blank">
-          <FaFacebookSquare size={30} color="yellow" />
-        </A>
+        {width > mobileThreshold && (
+          <>
+            <A href={WHATSAPP_LINK} target="_blank">
+              <FaWhatsappSquare size={30} color={iconsColor} />
+            </A>
+            <A href={YOUTUBE_LINK} target="_blank">
+              <FaYoutubeSquare size={30} color={iconsColor} />
+            </A>
+            <A href={TIKTOK_LINK} target="_blank">
+              <FaTiktok size={30} color={iconsColor} />
+            </A>
+            <A href={FACEBOOK_LINK} target="_blank">
+              <FaFacebookSquare size={30} color={iconsColor} />
+            </A>
+          </>
+        )}
         <a href={"https://standup.alonalush.com"}>
           <Logo
             src={`${links.baseUrl}/images/logo.png`}
@@ -94,18 +101,23 @@ export default Nav;
 
 const LinksRow = styled.div`
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 
   ${DESKTOP_MQ} {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 const A = styled.a`
   margin-inline: 6px;
   &:hover * {
-    color: white;
-    fill: white;
+    color: yellow;
+    fill: yellow;
   }
   ${DESKTOP_MQ} {
   }

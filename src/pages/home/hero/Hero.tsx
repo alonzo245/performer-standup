@@ -27,7 +27,14 @@ const Hero: React.FC = () => {
           <StyledAnchorLink href="#about" theme={theme}>
             מי אני
           </StyledAnchorLink>
-          <StyledAnchorLink href="#contact-me" theme={theme}>
+          {/* <StyledAnchorLink href="#contact-me" theme={theme}> */}
+          <StyledAnchorLink
+            href="#contact-me"
+            onClick={() => {
+              window.document.location.href = WHATSAPP_LINK;
+            }}
+            theme={theme}
+          >
             צרו קשר
           </StyledAnchorLink>
         </div>
