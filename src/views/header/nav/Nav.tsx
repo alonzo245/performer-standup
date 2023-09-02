@@ -69,6 +69,11 @@ const Nav: FC = () => {
           </StyledAnchorLink>
         </li>
         <li>
+          <StyledAnchorLink href="#show-types" onClick={() => setOpen(false)}>
+            סוגי מופעים
+          </StyledAnchorLink>
+        </li>
+        <li>
           <StyledAnchorLink href="#projects" onClick={() => setOpen(false)}>
             סרטונים
           </StyledAnchorLink>
