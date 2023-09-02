@@ -1,6 +1,6 @@
 {
-  "short_name": "אלון אלוש הייטקיסט סטנדאפיסט",
-  "name": "אלון אלוש הייטקיסט סטנדאפיסט",
+  "short_name": "אלון אלוש סטנדאפיסט הייטקיסט",
+  "name": "אלון אלוש סטנדאפיסט הייטקיסט",
   "icons": [
     {
       "src": "favicon.ico",
@@ -29,7 +29,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "browser": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
 }
