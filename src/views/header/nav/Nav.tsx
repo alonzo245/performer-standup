@@ -1,11 +1,24 @@
 import styled from "@emotion/styled";
 import { FC, useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { FaBars } from "react-icons/fa";
+import {
+  FaBars,
+  FaTiktok,
+  FaYoutubeSquare,
+  FaInstagramSquare,
+  FaFacebookSquare,
+  FaWhatsappSquare,
+} from "react-icons/fa";
 import { useScreenSize } from "../../../hooks/useScreenSize";
 import Colors from "../../../theme/Colors";
 import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
 import topology from "../../../config/topology";
+import {
+  FACEBOOK_LINK,
+  TIKTOK_LINK,
+  WHATSAPP_LINK,
+  YOUTUBE_LINK,
+} from "../../../pages/home/hero/Hero";
 
 const Nav: FC = () => {
   const links = topology();
@@ -20,10 +33,29 @@ const Nav: FC = () => {
 
   return (
     <Container show={open}>
-      <Logo
-        src={`${links.baseUrl}/images/logo.png`}
-        alt="Full-Stack Developer"
-      />
+      <LinksRow>
+        <A href={WHATSAPP_LINK} target="_blank">
+          <FaWhatsappSquare size={30} color="yellow" />
+        </A>
+        <A href={YOUTUBE_LINK} target="_blank">
+          <FaYoutubeSquare size={30} color="yellow" />
+        </A>
+        <A href={TIKTOK_LINK} target="_blank">
+          <FaTiktok size={30} color="yellow" />
+        </A>
+        {/* <A href={""}>
+          <FaInstagramSquare size={30} color="yellow" />
+        </A> */}
+        <A href={FACEBOOK_LINK} target="_blank">
+          <FaFacebookSquare size={30} color="yellow" />
+        </A>
+        <a href={"https://standup.alonalush.com"}>
+          <Logo
+            src={`${links.baseUrl}/images/logo.png`}
+            alt="Full-Stack Developer"
+          />
+        </a>
+      </LinksRow>
       <NavList show={open}>
         <li>
           <StyledAnchorLink href="#about" onClick={() => setOpen(false)}>
@@ -60,6 +92,25 @@ const Nav: FC = () => {
 
 export default Nav;
 
+const LinksRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ${DESKTOP_MQ} {
+  }
+`;
+
+const A = styled.a`
+  margin-inline: 6px;
+  &:hover * {
+    color: white;
+    fill: white;
+  }
+  ${DESKTOP_MQ} {
+  }
+`;
+
 const Container = styled.nav<{ show: boolean }>`
   display: flex;
 
@@ -72,7 +123,7 @@ const Container = styled.nav<{ show: boolean }>`
     flex-direction: row-reverse;
     justify-content: space-between;
     box-shadow: 0 1px 4px rgb(146 161 176 / 15%);
-    height: auto;
+    height: 70px;
   }
 `;
 
@@ -133,8 +184,6 @@ const StyledAnchorLink = styled(AnchorLink)`
   cursor: pointer;
   color: ${Colors.white};
 `;
-
-
 
 const Hamburger = styled.button`
   cursor: pointer;

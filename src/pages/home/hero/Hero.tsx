@@ -8,7 +8,11 @@ import { DESKTOP_MQ } from "../../../theme/theme.constants";
 import topology from "../../../config/topology";
 
 export const FACEBOOK_LINK = "https://www.facebook.com/alonalush";
-export const WHATSAPP_LINK = "whatsapp://send?text=שלום אלון פניתי בנושא מופע סטנדאפ אנא חזור אליי.&phone=972526299978";
+export const WHATSAPP_LINK =
+  "whatsapp://send?text=שלום אלון פניתי בנושא מופע סטנדאפ אנא חזור אליי.&phone=972526299978";
+export const YOUTUBE_LINK = "https://www.youtube.com/@AlonAlush/shorts";
+export const TIKTOK_LINK = "https://www.tiktok.com/@alon_alush";
+export const INSTAGRAM_LINK = "";
 
 const Hero: React.FC = () => {
   const links = topology();
@@ -18,8 +22,8 @@ const Hero: React.FC = () => {
     <Container theme={theme}>
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
-        <P>סטנדאפיסט ומנחה</P>
-        <div style={{display:"flex"}}>
+        <P>סטנדאפ והנחיה</P>
+        <div style={{ display: "flex" }}>
           <StyledAnchorLink href="#about" theme={theme}>
             מי אני
           </StyledAnchorLink>
@@ -185,7 +189,7 @@ const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType }>`
   align-items: center;
   font-weight: bold;
 
-  &:last-child{
+  &:last-child {
     margin-inline-start: 20px;
   }
 

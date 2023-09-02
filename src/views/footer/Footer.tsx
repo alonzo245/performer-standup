@@ -1,9 +1,16 @@
 import styled from "@emotion/styled";
-import { BsFacebook, BsWhatsapp } from "react-icons/bs";
-import { useThemeState } from "../../context/useThemeState";
-import { FACEBOOK_LINK, WHATSAPP_LINK } from "../../pages/home/hero/Hero";
-import { THEMES, ThemeType } from "../../theme";
+import { BsFacebook } from "react-icons/bs";
+import { FaTiktok, FaYoutubeSquare } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
+import { useThemeState } from "../../context/useThemeState";
+import {
+  FACEBOOK_LINK,
+  TIKTOK_LINK,
+  WHATSAPP_LINK,
+  YOUTUBE_LINK,
+} from "../../pages/home/hero/Hero";
+import { THEMES, ThemeType } from "../../theme";
+import { DESKTOP_MQ } from "../../theme/theme.constants";
 
 const Footer: React.FC = () => {
   const { theme } = useThemeState();
@@ -11,11 +18,8 @@ const Footer: React.FC = () => {
   return (
     <Container id="contact-me" theme={theme}>
       <H5>אלון אלוש</H5>
-      <P>בחרו כיצד ליצור איתי קשר</P>
+      <P>יצירת קשר</P>
       <Row>
-        {/* <Link href={CV_LINK} data-tip data-for="cv">
-                <BsFacebook color='#fff' size={40} />
-                </Link> */}
         <Link href={WHATSAPP_LINK} data-tip data-for="github">
           <RiWhatsappFill color="#fff" size={45} />
           <AltText>וואטסאפ</AltText>
@@ -24,10 +28,14 @@ const Footer: React.FC = () => {
           <BsFacebook color="#fff" size={40} />
           <AltText>פייסבוק</AltText>
         </Link>
-
-        {/* <Link href={LINKEDIN_LINK} target="_blank" data-tip data-for="linkedin">
-                <BsFacebook color='#fff' size={40} />
-                </Link> */}
+        <Link href={YOUTUBE_LINK} target="_blank">
+          <FaYoutubeSquare size={30} color="#fff" />
+          <AltText>יוטיוב</AltText>
+        </Link>
+        <Link href={TIKTOK_LINK} target="_blank">
+          <FaTiktok size={30} color="#fff" />
+          <AltText>טיקטוק</AltText>
+        </Link>
       </Row>
     </Container>
   );
@@ -38,7 +46,6 @@ export default Footer;
 const AltText = styled.div`
   color: white;
   margin-top: 10px;
- 
 `;
 const Link = styled.a`
   display: block;
@@ -51,8 +58,13 @@ const Link = styled.a`
 
 const Row = styled.div`
   display: flex;
-  justify-content: space-between;
-  max-width: 300px;
+  justify-content: space-evenly;
+  max-width: 100%;
+
+  ${DESKTOP_MQ} {
+    display: flex;
+    max-width: 300px;
+  }
 `;
 
 const H5 = styled.h5`
