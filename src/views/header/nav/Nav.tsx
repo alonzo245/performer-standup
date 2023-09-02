@@ -3,22 +3,21 @@ import { FC, useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import {
   FaBars,
-  FaTiktok,
-  FaYoutubeSquare,
-  FaInstagramSquare,
   FaFacebookSquare,
+  FaTiktok,
   FaWhatsappSquare,
+  FaYoutubeSquare,
 } from "react-icons/fa";
-import { useScreenSize } from "../../../hooks/useScreenSize";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
 import topology from "../../../config/topology";
+import { useScreenSize } from "../../../hooks/useScreenSize";
 import {
   FACEBOOK_LINK,
   TIKTOK_LINK,
   WHATSAPP_LINK,
   YOUTUBE_LINK,
 } from "../../../pages/home/hero/Hero";
+import Colors from "../../../theme/Colors";
+import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
 
 const Nav: FC = () => {
   const links = topology();
