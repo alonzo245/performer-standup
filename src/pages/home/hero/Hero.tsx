@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     <Container theme={theme}>
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
-        <P>סטנדאפ והנחיה</P>
+        <P>מופע סטנדאפ והנחייה</P>
         <div style={{ display: "flex" }}>
           <StyledAnchorLink href="#about" theme={theme}>
             מי אני
@@ -158,7 +158,7 @@ const P = styled.p`
 
   ${DESKTOP_MQ} {
     margin-bottom: 30px;
-    font-size: 50px;
+    font-size: 48px;
   }
 `;
 
