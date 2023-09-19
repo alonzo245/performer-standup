@@ -4,9 +4,12 @@ import { Hero } from "../../pages/home/hero";
 import { ThemeType } from "../../theme";
 import { Nav } from "./nav";
 import topology from "../../config/topology";
+import { mobileThreshold } from "../../theme/theme.constants";
+import { useScreenSize } from "../../hooks/useScreenSize";
+import ComedySpecial from "../../components/ComedySpecial";
 
 const Header: React.FC = () => {
-    const links = topology();
+  const links = topology();
   const { theme } = useThemeState();
 
   return (
@@ -34,7 +37,7 @@ const Container = styled.header<{ theme: ThemeType; bgImage: string }>`
   height: 100vh;
   color: white;
   font-size: 40px;
-  background-image: url(${p => p.bgImage});
+  background-image: url(${(p) => p.bgImage});
   background-size: cover, cover;
   background-repeat: no-repeat, no-repeat;
   background-position: top center;

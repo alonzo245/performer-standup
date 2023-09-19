@@ -4,8 +4,10 @@ import { IoDocumentAttachOutline } from "react-icons/io5";
 import { useThemeState } from "../../../context/useThemeState";
 import { THEMES, ThemeType } from "../../../theme";
 import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ } from "../../../theme/theme.constants";
+import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
 import topology from "../../../config/topology";
+import ComedySpecial from "../../../components/ComedySpecial";
+import { useScreenSize } from "../../../hooks/useScreenSize";
 
 export const FACEBOOK_LINK = "https://www.facebook.com/alonalush";
 export const WHATSAPP_LINK =
@@ -17,6 +19,7 @@ export const INSTAGRAM_LINK = "";
 const Hero: React.FC = () => {
   const links = topology();
   const { theme } = useThemeState();
+  const { width } = useScreenSize();
 
   return (
     <Container theme={theme}>
@@ -38,6 +41,8 @@ const Hero: React.FC = () => {
             צרו קשר
           </StyledAnchorLink>
         </div>
+
+        {width > mobileThreshold && <ComedySpecial />}
       </Row>
       <RowContact>
         <Alon />
@@ -176,7 +181,7 @@ const Row = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 80px;
-    margin-bottom: 400px;
+    margin-bottom: 80px;
   }
 `;
 
