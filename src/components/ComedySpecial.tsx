@@ -6,11 +6,12 @@ const ComedySpecial: React.FC = () => {
     <IframeContainer>
       <iframe
         style={{ margin: "0 auto", border: "9px solid yellow" }}
-        src="https://drive.google.com/file/d/1U2pQLckiCmVumnSxjPOo_nDP3_8-C5XH/preview"
         width="260"
         height="480"
-        allow="autoplay"
-        scrolling="no"
+        src="https://www.youtube.com/embed/AhXRXg1YZMg?si=6Ohsblm9-PIw6DST&showinfo=0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+        allowFullScreen={true}
       />
       {/* <div
       style={{
@@ -30,7 +31,7 @@ const ComedySpecial: React.FC = () => {
 export default ComedySpecial;
 
 const IframeContainer = styled.div`
-  margin: 80px auto;
+  margin: 40px auto;
   text-align: center;
 
   ${DESKTOP_MQ} {

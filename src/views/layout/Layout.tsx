@@ -22,7 +22,12 @@ const Layout: React.FC<Props> = ({ children }) => {
       <MobileContactLinks />
       <ScrollToTop smooth color="#a20000" style={{ bottom: "70px" }} />
       <Header />
-      {width < mobileThreshold && <ComedySpecial />}
+      {width < mobileThreshold && (
+        <div>
+          <Title>קטעים ממופע הסטנדאפ האישי</Title>
+          <ComedySpecial />
+        </div>
+      )}
       {children}
       <Footer />
     </Container>
@@ -34,4 +39,12 @@ export default Layout;
 const Container = styled.main<{ theme: ThemeType }>`
   background-color: ${(p) => THEMES[p.theme.themeName]?.mainBackground};
   color: ${(p) => THEMES[p.theme.themeName]?.textGeneral};
+`;
+
+const Title = styled.div`
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 40px;
+  margin: 0 auto;
 `;
