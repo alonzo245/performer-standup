@@ -6,13 +6,22 @@ const ComedySpecial: React.FC = () => {
     <IframeContainer>
       <iframe
         style={{ margin: "0 auto", border: "9px solid yellow" }}
+        width="440"
+        height="260"
+        src="https://www.youtube.com/embed/EExve0k-iJ8?si=6Ohsblm9-PIw6DST&showinfo=0"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+        allowFullScreen={true}
+      />
+      {/* <iframe
+        style={{ margin: "0 auto", border: "9px solid yellow" }}
         width="260"
         height="480"
         src="https://www.youtube.com/embed/AhXRXg1YZMg?si=6Ohsblm9-PIw6DST&showinfo=0"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
         allowFullScreen={true}
-      />
+      /> */}
       {/* <div
       style={{
         width: "80px",
@@ -34,11 +43,15 @@ const IframeContainer = styled.div`
   margin: 40px auto;
   text-align: center;
 
+  & iframe {
+    width: 100% !important;
+  }
+
   ${DESKTOP_MQ} {
-    width: 260px;
-    height: 480px;
+    width: 440px;
+    height: 260px;
     position: relative;
-    padding-right: 85px;
+    padding-right: 0;
     padding-top: 32px;
     margin: unset;
     text-align: unset;
