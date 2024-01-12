@@ -1,20 +1,20 @@
-import styled from "@emotion/styled";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import { IoDocumentAttachOutline } from "react-icons/io5";
-import { useThemeState } from "../../../context/useThemeState";
-import { THEMES, ThemeType } from "../../../theme";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
-import topology from "../../../config/topology";
-import ComedySpecial from "../../../components/ComedySpecial";
-import { useScreenSize } from "../../../hooks/useScreenSize";
+import styled from '@emotion/styled';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { IoDocumentAttachOutline } from 'react-icons/io5';
+import { useThemeState } from '../../../context/useThemeState';
+import { THEMES, ThemeType } from '../../../theme';
+import Colors from '../../../theme/Colors';
+import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
+import topology from '../../../config/topology';
+import ComedySpecial from '../../../components/ComedySpecial';
+import { useScreenSize } from '../../../hooks/useScreenSize';
 
-export const FACEBOOK_LINK = "https://www.facebook.com/alonalush";
+export const FACEBOOK_LINK = 'https://www.facebook.com/alonalush';
 export const WHATSAPP_LINK =
-  "whatsapp://send?text=שלום אלון פניתי בנושא מופע סטנדאפ אנא חזור אליי.&phone=972526299978";
-export const YOUTUBE_LINK = "https://www.youtube.com/@AlonAlush/shorts";
-export const TIKTOK_LINK = "https://www.tiktok.com/@alon_alush";
-export const INSTAGRAM_LINK = "";
+  'whatsapp://send?text=שלום אלון פניתי בנושא מופע סטנדאפ אנא חזור אליי.&phone=972526299978';
+export const YOUTUBE_LINK = 'https://www.youtube.com/@AlonAlush/shorts';
+export const TIKTOK_LINK = 'https://www.tiktok.com/@alon_alush';
+export const INSTAGRAM_LINK = '';
 
 const Hero: React.FC = () => {
   const links = topology();
@@ -26,20 +26,22 @@ const Hero: React.FC = () => {
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
         <P>מופע סטנדאפ והנחייה</P>
-        <div style={{ display: "flex" }}>
-          <StyledAnchorLink href="#about" theme={theme}>
+        <div style={{ display: 'flex' }}>
+          <StyledAnchorLink href='#about' theme={theme}>
             מי אני
           </StyledAnchorLink>
           {/* <StyledAnchorLink href="#contact-me" theme={theme}> */}
-          <StyledAnchorLink
-            href="#contact-me"
+          <A
+            href='#'
             onClick={() => {
               window.document.location.href = WHATSAPP_LINK;
             }}
             theme={theme}
+            bgColor='#00D25D'
+            color='#ffffff'
           >
-            צרו קשר
-          </StyledAnchorLink>
+            וואטסאפ
+          </A>
         </div>
 
         {width > mobileThreshold && <ComedySpecial />}
@@ -96,7 +98,6 @@ const Alon = styled.div`
   border-radius: 50%;
   background-color: #ffffaf20;
   position: absolute;
-  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   bottom: -210px;
@@ -144,7 +145,7 @@ const H1 = styled.h1<{ theme: ThemeType }>`
   }
 
   &::after {
-    content: "אלון אלוש";
+    content: 'אלון אלוש';
     color: yellow;
     z-index: 1;
     position: absolute;
@@ -185,16 +186,40 @@ const Row = styled.div`
   }
 `;
 
-const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType }>`
+const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType; bgColor?: string; color?: string }>`
   width: 120px;
   height: 35px;
   border-radius: 20px;
-  background: yellow;
+  background: ${(p) => (p?.bgColor ? p?.bgColor : 'yellow')};
   text-align: center;
   font-size: 22px;
-  font-weight: 300;
   padding: 5px 10px;
-  color: ${Colors.black};
+  color: ${(p) => (p?.color ? p?.color : Colors.black)};
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+
+  &:last-child {
+    margin-inline-start: 20px;
+  }
+
+  ${DESKTOP_MQ} {
+    width: 200px;
+    height: 55px;
+    font-size: 35px;
+  }
+`;
+const A = styled.a<{ theme: ThemeType; bgColor?: string; color?: string }>`
+  width: 120px;
+  height: 35px;
+  border-radius: 20px;
+  background: ${(p) => (p?.bgColor ? p?.bgColor : 'yellow')};
+  text-align: center;
+  font-size: 22px;
+  padding: 5px 10px;
+  color: ${(p) => (p?.color ? p?.color : Colors.black)};
   cursor: pointer;
   display: flex;
   justify-content: center;

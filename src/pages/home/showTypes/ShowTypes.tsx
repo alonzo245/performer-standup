@@ -1,60 +1,51 @@
-import styled from "@emotion/styled";
-import { FaBirthdayCake, FaTheaterMasks } from "react-icons/fa";
-import { GiTheater } from "react-icons/gi";
-import { useThemeState } from "../../../context/useThemeState";
-import { THEMES, ThemeType } from "../../../theme";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ } from "../../../theme/theme.constants";
+import styled from '@emotion/styled';
+import { FaBirthdayCake, FaTheaterMasks } from 'react-icons/fa';
+import { GiTheater } from 'react-icons/gi';
+import { useThemeState } from '../../../context/useThemeState';
+import { THEMES, ThemeType } from '../../../theme';
+import Colors from '../../../theme/Colors';
+import { DESKTOP_MQ } from '../../../theme/theme.constants';
 
 const AboutMe: React.FC = () => {
   const { theme } = useThemeState();
 
   return (
-    <Container id="show-types">
+    <Container id='show-types'>
       <H3 theme={theme}>סוגי מופעים</H3>
       <Row>
         <Article>
           <Circle>
-            <FaTheaterMasks size={40} color="yellow" />
+            <GiTheater size={40} color='yellow' />
+          </Circle>{' '}
+          <P size={30}>סטנדאפ וגיבוש עובדים</P>
+          <P size={19}>אירוע שמחבר צוותי עבודה בצורה מבדרת, קלילה והומוריסטית.</P>
+        </Article>
+
+        <Article>
+          <Circle>
+            <FaTheaterMasks size={40} color='yellow' />
           </Circle>
           <P size={30}>סטנדאפ אישי</P>
           <P size={19}>
-            מופע מצחיק עם הרבה הומור על החיים שלי ועל המהות שלנו בחיי היום היום,
-            ניתן להתאים את אופי המופע לפי דרישות מראש.
+            מופע הומוריסטי על החיים, נישואים, ילדים ועל מה שבניהם, ניתן להתאים את אופי המופע לפי
+            דרישות מראש.
           </P>
         </Article>
 
         <Article>
           <Circle>
-            <GiTheater size={40} color="yellow" />
-          </Circle>{" "}
-          <P size={30}>סטנדאפ גיבוש עובדים וחברות</P>
-          <P size={19}>
-            דרך נפלאה לאחד צוותי עבודה ולקשר בניהם בצורה מצחיקה, הומוריסטית
-            שתוציא את המיטב מהחוויה הזאת.
-          </P>
+            <FaBirthdayCake size={40} color='yellow' />
+          </Circle>{' '}
+          <P size={30}>סטנדאפ למשפחה וימי הולדת</P>
+          <P size={19}>סטנדאפ אישי על המשפחה ובעל/ת האירוע נוציא את המצחיק מהסיפורים האישיים.</P>
         </Article>
 
         <Article>
           <Circle>
-            <FaBirthdayCake size={40} color="yellow" />
-          </Circle>{" "}
-          <P size={30}>אירוע משפחתי ויום הולדת</P>
-          <P size={19}>
-            נכתוב סטנדאפ אישי על המשפחה או בעל/ת האירוע ונוציא את הצחוק מרוב
-            הסיפורים והאנשים שיגיעו לשמוח באירוע.
-          </P>
-        </Article>
-
-        <Article>
-          <Circle>
-            <FaTheaterMasks size={40} color="yellow" />
-          </Circle>{" "}
+            <FaTheaterMasks size={40} color='yellow' />
+          </Circle>{' '}
           <P size={30}>הנחיית אירועים</P>
-          <P size={19}>
-            יש אירועים רציניים שצריכים להקליל את האווירה במעט או בהרבה, ובשביל
-            זה אני כאן לעזור לכך לקרות.
-          </P>
+          <P size={19}>יצירת עיניין לקהל והתאמה שלו לפי אופי האירוע והקהל.</P>
         </Article>
       </Row>
     </Container>
@@ -88,7 +79,7 @@ const H3 = styled.h3<{ theme: ThemeType }>`
   margin: 10px auto 0px auto;
 
   &::after {
-    content: "סוגי מופעים";
+    content: 'סוגי מופעים';
     color: ${Colors.white};
     z-index: 1;
     position: absolute;

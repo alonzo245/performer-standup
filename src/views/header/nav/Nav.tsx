@@ -1,36 +1,31 @@
-import styled from "@emotion/styled";
-import { FC, useEffect, useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import {
-  FaBars,
-  FaFacebookSquare,
-  FaTiktok,
-  FaYoutubeSquare,
-} from "react-icons/fa";
-import { BsWhatsapp, BsYoutube } from "react-icons/bs";
-import topology from "../../../config/topology";
-import { useScreenSize } from "../../../hooks/useScreenSize";
+import styled from '@emotion/styled';
+import { FC, useEffect, useState } from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { FaBars, FaFacebookSquare, FaTiktok, FaYoutubeSquare } from 'react-icons/fa';
+import { BsWhatsapp, BsYoutube } from 'react-icons/bs';
+import topology from '../../../config/topology';
+import { useScreenSize } from '../../../hooks/useScreenSize';
 import {
   FACEBOOK_LINK,
   TIKTOK_LINK,
   WHATSAPP_LINK,
   YOUTUBE_LINK,
-} from "../../../pages/home/hero/Hero";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
+} from '../../../pages/home/hero/Hero';
+import Colors from '../../../theme/Colors';
+import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
 
 const Nav: FC = () => {
   const links = topology();
   const { width } = useScreenSize();
   const [open, setOpen] = useState(false);
-  const [iconsColor, setIconsColor] = useState("white");
+  const [iconsColor, setIconsColor] = useState('white');
 
   useEffect(() => {
     if (width > mobileThreshold) {
       setOpen(false);
-      setIconsColor("white");
+      setIconsColor('white');
     }
-    setIconsColor("white");
+    setIconsColor('white');
   }, [width]);
 
   return (
@@ -41,40 +36,37 @@ const Nav: FC = () => {
         </A> */}
         {width > mobileThreshold && (
           <>
-            <A href={WHATSAPP_LINK} target="_blank">
+            <A href={WHATSAPP_LINK} target='_blank'>
               <BsWhatsapp size={30} color={iconsColor} />
             </A>
-            <A href={YOUTUBE_LINK} target="_blank">
+            <A href={YOUTUBE_LINK} target='_blank'>
               <BsYoutube size={30} color={iconsColor} />
             </A>
-            <A href={TIKTOK_LINK} target="_blank">
+            <A href={TIKTOK_LINK} target='_blank'>
               <FaTiktok size={30} color={iconsColor} />
             </A>
-            <A href={FACEBOOK_LINK} target="_blank">
+            <A href={FACEBOOK_LINK} target='_blank'>
               <FaFacebookSquare size={30} color={iconsColor} />
             </A>
           </>
         )}
-        <a href={"https://standup.alonalush.com"}>
-          <Logo
-            src={`${links.baseUrl}/images/logo.png`}
-            alt="Full-Stack Developer"
-          />
+        <a href={'https://standup.alonalush.com'}>
+          <Logo src={`${links.baseUrl}/images/logo.png`} alt='Full-Stack Developer' />
         </a>
       </LinksRow>
       <NavList show={open}>
         <li>
-          <StyledAnchorLink href="#about" onClick={() => setOpen(false)}>
-            מי אני
+          <StyledAnchorLink href='#about' onClick={() => setOpen(false)}>
+            אלון אלוש
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href="#show-types" onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='#show-types' onClick={() => setOpen(false)}>
             סוגי מופעים
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href="#projects" onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='#projects' onClick={() => setOpen(false)}>
             סרטונים
           </StyledAnchorLink>
         </li>
@@ -92,7 +84,7 @@ const Nav: FC = () => {
       {width < mobileThreshold && (
         <Span>
           {/* <ThemeToggle /> */}
-          <Hamburger id="hamburger" onClick={() => setOpen(!open)}>
+          <Hamburger id='hamburger' onClick={() => setOpen(!open)}>
             <FaBars size={30} />
           </Hamburger>
         </Span>
@@ -144,7 +136,7 @@ const Container = styled.nav<{ show: boolean }>`
 `;
 
 const NavList = styled.ul<{ show: boolean }>`
-  display: ${(p) => (p.show ? "flex" : "none")};
+  display: ${(p) => (p.show ? 'flex' : 'none')};
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
@@ -152,7 +144,7 @@ const NavList = styled.ul<{ show: boolean }>`
   margin-top: 111px;
   padding: 0 0 20px 0;
 
-  position: ${(p) => (p.show ? "absolute" : "unset")};
+  position: ${(p) => (p.show ? 'absolute' : 'unset')};
   top: 60px;
   margin: 0;
   width: 100%;
