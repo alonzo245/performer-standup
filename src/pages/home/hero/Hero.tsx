@@ -25,10 +25,10 @@ const Hero: React.FC = () => {
     <Container theme={theme}>
       <Row>
         <H1 theme={theme}>אלון אלוש</H1>
-        <P>סטנדאפיסט הייטקיסט והנחייה</P>
+        <P>סטנדאפיסט הייטקיסט מנחה</P>
         <div style={{ display: 'flex' }}>
           <StyledAnchorLink href='#about' theme={theme}>
-            מי אני
+            מידע נוסף
           </StyledAnchorLink>
           {/* <StyledAnchorLink href="#contact-me" theme={theme}> */}
           <A
@@ -157,14 +157,13 @@ const H1 = styled.h1<{ theme: ThemeType }>`
 
 const P = styled.p`
   font-size: 30px;
-  font-weight: 300;
-  margin-bottom: 10px;
   font-weight: bold;
   margin: 0 0 15px 0;
+  text-align: center;
 
   ${DESKTOP_MQ} {
     margin-bottom: 30px;
-    font-size: 48px;
+    font-size: 38px;
   }
 `;
 
@@ -192,7 +191,7 @@ const StyledAnchorLink = styled(AnchorLink)<{ theme: ThemeType; bgColor?: string
   border-radius: 20px;
   background: ${(p) => (p?.bgColor ? p?.bgColor : 'yellow')};
   text-align: center;
-  font-size: 22px;
+  font-size: 21px;
   padding: 5px 10px;
   color: ${(p) => (p?.color ? p?.color : Colors.black)};
   cursor: pointer;
@@ -217,7 +216,7 @@ const A = styled.a<{ theme: ThemeType; bgColor?: string; color?: string }>`
   border-radius: 20px;
   background: ${(p) => (p?.bgColor ? p?.bgColor : 'yellow')};
   text-align: center;
-  font-size: 22px;
+  font-size: 21px;
   padding: 5px 10px;
   color: ${(p) => (p?.color ? p?.color : Colors.black)};
   cursor: pointer;

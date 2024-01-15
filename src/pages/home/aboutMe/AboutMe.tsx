@@ -1,29 +1,24 @@
-import styled from "@emotion/styled";
-import topology from "../../../config/topology";
-import { useThemeState } from "../../../context/useThemeState";
-import { THEMES, ThemeType } from "../../../theme";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ } from "../../../theme/theme.constants";
+import styled from '@emotion/styled';
+import topology from '../../../config/topology';
+import { useThemeState } from '../../../context/useThemeState';
+import { THEMES, ThemeType } from '../../../theme';
+import Colors from '../../../theme/Colors';
+import { DESKTOP_MQ } from '../../../theme/theme.constants';
 
 const AboutMe: React.FC = () => {
   const links = topology();
   const { theme } = useThemeState();
 
   return (
-    <Container id="about">
+    <Container id='about'>
       <H2 theme={theme}>אלון אלוש</H2>
       <Row>
-        <Img src={`${links.baseUrl}/images/img2.png`} alt="אלון אלוש" />
+        <Img src={`${links.baseUrl}/images/img2.png`} alt='אלון אלוש' />
         <Article>
-          <P>
-            הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.
-          </P>
-          <P>
-            נהנה לשתף סיפורים מצחיקים מהחיים השגרתיים על הצד המצחיק שלהם.
-          </P>
-          <P>
-           בואו נחייך באירוע הבא ביחד.
-          </P>
+          <P>הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.</P>
+          <P>נהנה לשתף סיפורים מצחיקים מהחיים השגרתיים על הצד המצחיק שלהם.</P>
+          <P>המופע מתאים לערבי גיבוש עובדים, ימי כיף, כנסים, אירועי חברה וימי הולדת.</P>
+          <P>בואו נצחק ביחד באירוע הבא.</P>
         </Article>
       </Row>
     </Container>
@@ -52,7 +47,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   margin: 10px auto;
 
   &::after {
-    content: "אלון אלוש";
+    content: 'אלון אלוש';
     color: ${Colors.white};
     z-index: 1;
     position: absolute;
