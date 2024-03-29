@@ -1,0 +1,1 @@
+rm -rf ./build && rm -f ./public/404.html && npm run build && cat ./build/index.html > ./public/404.html && git add . 
