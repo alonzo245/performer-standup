@@ -57,7 +57,7 @@ const Row = styled.div`
 `;
 
 const H5 = styled.div`
-  margin: 30px auto 20px auto;
+  margin: 10px auto 20px auto;
   width: 100%;
   padding: 0 20px;
   font-size: 30px;
