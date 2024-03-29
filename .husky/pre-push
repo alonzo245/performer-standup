@@ -4,4 +4,5 @@ npm run build &&
 cat ./build/index.html > ./public/404.html && 
 rm -rf ./build && 
 git add . && 
-git commit -m "save from husky"
+git commit -m "save from husky" &&
+git push origin main
