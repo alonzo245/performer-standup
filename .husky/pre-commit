@@ -2,7 +2,4 @@ rm -rf ./build &&
 rm -f ./public/404.html && 
 npm run build && 
 cat ./build/index.html > ./public/404.html && 
-rm -rf ./build && 
-git add . && 
-git commit -m "save from husky" &&
-git push origin HEAD
+rm -rf ./build
