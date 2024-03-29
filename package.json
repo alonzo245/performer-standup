@@ -45,6 +45,7 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/react-tooltip": "^4.2.4",
     "gh-pages": "^3.2.3",
+    "husky": "^9.0.11",
     "prettier": "3.1.1"
   },
   "scripts": {
@@ -54,6 +55,11 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "rm -rf ./build && -f ./public/404.html && npm run build && cat ./build/index.html > ./public/404.html && git add ."
+    }
   },
   "eslintConfig": {
     "extends": [
