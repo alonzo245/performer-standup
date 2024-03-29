@@ -1,12 +1,8 @@
-import styled from "@emotion/styled";
-import { useThemeState } from "../../context/useThemeState";
-import { Hero } from "../../pages/home/hero";
-import { ThemeType } from "../../theme";
-import { Nav } from "./nav";
-import topology from "../../config/topology";
-import { mobileThreshold } from "../../theme/theme.constants";
-import { useScreenSize } from "../../hooks/useScreenSize";
-import ComedySpecial from "../../components/ComedySpecial";
+import styled from '@emotion/styled';
+import topology from '../../config/topology';
+import { useThemeState } from '../../context/useThemeState';
+import { Hero } from '../../pages/home/hero';
+import { ThemeType } from '../../theme';
 
 const Header: React.FC = () => {
   const links = topology();
@@ -14,7 +10,6 @@ const Header: React.FC = () => {
 
   return (
     <Container theme={theme} bgImage={`${links.baseUrl}/images/bg.jpg`}>
-      <Nav />
       <Row>
         <Hero />
       </Row>
@@ -42,4 +37,5 @@ const Container = styled.header<{ theme: ThemeType; bgImage: string }>`
   background-repeat: no-repeat, no-repeat;
   background-position: top center;
   overflow: hidden;
+  padding: 70px 0 0 0;
 `;

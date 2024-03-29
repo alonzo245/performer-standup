@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { FC, useEffect, useState } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { FaBars, FaFacebookSquare, FaTiktok, FaYoutubeSquare } from 'react-icons/fa';
+import { FaBars, FaFacebookSquare, FaTiktok } from 'react-icons/fa';
 import { BsWhatsapp, BsYoutube } from 'react-icons/bs';
 import topology from '../../../config/topology';
 import { useScreenSize } from '../../../hooks/useScreenSize';
@@ -56,17 +56,17 @@ const Nav: FC = () => {
       </LinksRow>
       <NavList show={open}>
         <li>
-          <StyledAnchorLink href='#about' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/performer-standup#about' onClick={() => setOpen(false)}>
             אלון אלוש
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href='#show-types' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/performer-standup#show-types' onClick={() => setOpen(false)}>
             סוגי מופעים
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href='#projects' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/performer-standup#projects' onClick={() => setOpen(false)}>
             סרטונים
           </StyledAnchorLink>
         </li>
@@ -121,7 +121,11 @@ const A = styled.a`
 
 const Container = styled.nav<{ show: boolean }>`
   display: flex;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 0 13px;
   justify-content: space-between;
   align-items: center;
   background-color: ${(p) => (p.show ? `#000000` : `${Colors.black}50`)};
@@ -188,7 +192,7 @@ const Logo = styled.img`
   }
 `;
 
-const StyledAnchorLink = styled(AnchorLink)`
+const StyledAnchorLink = styled.a`
   cursor: pointer;
   color: ${Colors.white};
 `;

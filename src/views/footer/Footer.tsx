@@ -1,39 +1,39 @@
-import styled from "@emotion/styled";
-import { BsFacebook, BsYoutube } from "react-icons/bs";
-import { FaTiktok } from "react-icons/fa";
-import { RiWhatsappFill } from "react-icons/ri";
-import { useThemeState } from "../../context/useThemeState";
+import styled from '@emotion/styled';
+import { BsFacebook, BsYoutube } from 'react-icons/bs';
+import { FaTiktok } from 'react-icons/fa';
+import { RiWhatsappFill } from 'react-icons/ri';
+import { useThemeState } from '../../context/useThemeState';
 import {
   FACEBOOK_LINK,
   TIKTOK_LINK,
   WHATSAPP_LINK,
   YOUTUBE_LINK,
-} from "../../pages/home/hero/Hero";
-import { THEMES, ThemeType } from "../../theme";
-import { DESKTOP_MQ } from "../../theme/theme.constants";
+} from '../../pages/home/hero/Hero';
+import { THEMES, ThemeType } from '../../theme';
+import { DESKTOP_MQ } from '../../theme/theme.constants';
 
 const Footer: React.FC = () => {
   const { theme } = useThemeState();
 
   return (
-    <Container id="contact-me" theme={theme}>
+    <Container id='contact-me' theme={theme}>
       <H5>אלון אלוש</H5>
       <P>יצירת קשר</P>
       <Row>
-        <Link href={WHATSAPP_LINK} data-tip data-for="github">
-          <RiWhatsappFill color="#fff" size={45} />
+        <Link href={WHATSAPP_LINK} data-tip data-for='github'>
+          <RiWhatsappFill color='#fff' size={45} />
           <AltText>וואטסאפ</AltText>
         </Link>
-        <Link href={FACEBOOK_LINK} target="_blank" data-tip data-for="github">
-          <BsFacebook color="#fff" size={40} />
+        <Link href={FACEBOOK_LINK} target='_blank' data-tip data-for='github'>
+          <BsFacebook color='#fff' size={40} />
           <AltText>פייסבוק</AltText>
         </Link>
-        <Link href={YOUTUBE_LINK} target="_blank">
-          <BsYoutube size={30} color="#fff" />
+        <Link href={YOUTUBE_LINK} target='_blank'>
+          <BsYoutube size={30} color='#fff' />
           <AltText>יוטיוב</AltText>
         </Link>
-        <Link href={TIKTOK_LINK} target="_blank">
-          <FaTiktok size={30} color="#fff" />
+        <Link href={TIKTOK_LINK} target='_blank'>
+          <FaTiktok size={30} color='#fff' />
           <AltText>טיקטוק</AltText>
         </Link>
       </Row>
@@ -63,7 +63,7 @@ const Row = styled.div`
 
   ${DESKTOP_MQ} {
     display: flex;
-    max-width: 300px;
+    /* max-width: 300px; */
   }
 `;
 
