@@ -192,7 +192,7 @@ const Logo = styled.img`
   }
 `;
 
-const StyledAnchorLink = styled.a`
+const StyledAnchorLink = styled(AnchorLink)`
   cursor: pointer;
   color: ${Colors.white};
 `;

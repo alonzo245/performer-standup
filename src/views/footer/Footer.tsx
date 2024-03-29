@@ -11,6 +11,7 @@ import {
 } from '../../pages/home/hero/Hero';
 import { THEMES, ThemeType } from '../../theme';
 import { DESKTOP_MQ } from '../../theme/theme.constants';
+import { NavLink } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const { theme } = useThemeState();
@@ -18,7 +19,10 @@ const Footer: React.FC = () => {
   return (
     <Container id='contact-me' theme={theme}>
       <H5>אלון אלוש</H5>
-      <P>יצירת קשר</P>
+      <P>
+        <span>יצירת קשר</span> |{' '}
+        <StyledNavLink to={'/performer-standup/pr'}>יחסי ציבור</StyledNavLink>
+      </P>
       <Row>
         <Link href={WHATSAPP_LINK} data-tip data-for='github'>
           <RiWhatsappFill color='#fff' size={45} />
@@ -42,6 +46,10 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
+const StyledNavLink = styled(NavLink)`
+  color: white;
+`;
 
 const AltText = styled.div`
   color: white;

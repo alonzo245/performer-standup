@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import topology from '../../config/topology';
-import ImageGallery from '../../components/ImageGallery';
 import styled from '@emotion/styled';
 import CopyTextarea from '../../components/CopyTextarea';
+import Gallery from '../../components/Gallery';
 
 const Pr: FC = () => {
   const links = topology();
@@ -43,7 +43,7 @@ const Pr: FC = () => {
         <CopyTextarea text={eng} />
       </Row>
       <H5>תמונות פירסומים להורדה</H5>
-      <ImageGallery images={images} />
+      <Gallery images={images} />
     </Container>
   );
 };
