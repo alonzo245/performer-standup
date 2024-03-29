@@ -24,12 +24,9 @@ const Pr: FC = () => {
     { url: `${links.baseUrl}/images/pr/0.png` },
   ];
 
-  const eng = `Alon Alush - High-tech standup
-  A short standup session laghing about the situations we see in the Israeli high-tech.
-🎤 Alon Alush, a code wizard and a standup comedian who's equally skilled at making you laugh and crafting software magic`;
+  const eng = `Alon Alush is a tech developer and a stand-up artist who talk about people, computers and the office that glue them all together`;
 
-  const heb = `אלון אלוש - סטנדאפיסט הייטקיסט
-  הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.`;
+  const heb = `אלון אלוש סטנדאפיסט הייטקיסט שצוחק על ההייטק ועל כל מה שמחבר בין אנשים למחשבים במשרד.`;
 
   useEffect(() => {
     window.scrollTo(0, 0);

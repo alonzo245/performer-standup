@@ -25,7 +25,7 @@ const CopyTextarea = ({ text }) => {
 
   return (
     <Container>
-      <Textarea value={text} rows={9} cols={40} />
+      <Textarea value={text} rows={3} cols={40} />
       <Button onClick={handleCopy}>העתק תוכן</Button>
     </Container>
   );
@@ -34,7 +34,7 @@ const CopyTextarea = ({ text }) => {
 const Textarea = styled.textarea`
   background-color: #00000050;
   color: wheat;
-  padding: 20px;
+  padding: 10px;
   width: 100%;
 `;
 
