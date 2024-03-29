@@ -65,7 +65,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ image }) => {
     <div>
       <ImageWrapper>
         <Img src={image.url} />
-        <Dimensions>{`${imageWidth} X ${imageHeight}`}</Dimensions>
+        <Dimensions>{`${imageWidth}px X ${imageHeight}px`}</Dimensions>
         <Button onClick={() => handleClick(image.url)}>הורדה</Button>
       </ImageWrapper>
     </div>
@@ -83,7 +83,6 @@ const ImageWrapper = styled.div`
 `;
 
 const Img = styled.img`
-  /* max-width: 200px; */
   height: 200px;
   object-fit: cover;
   border-radius: 9px;
@@ -96,5 +95,7 @@ const Button = styled.button`
   padding: 4px;
   background-color: yellow;
   font-weight: bold;
+  border: 0;
+  border-radius: 5px;
 `;
 export default ImageGallery;

@@ -34,19 +34,3 @@ const Container = styled.div`
 const ImageWrapper = styled.div`
   margin: 10px;
 `;
-
-const Img = styled.img`
-  /* max-width: 200px; */
-  height: 200px;
-  object-fit: cover;
-  border-radius: 9px;
-`;
-
-const Button = styled.button`
-  display: block;
-  margin-top: 5px;
-  width: 100%;
-  padding: 4px;
-  background-color: yellow;
-  font-weight: bold;
-`;

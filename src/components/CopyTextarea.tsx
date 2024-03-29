@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { toast } from 'react-toastify';
+import { mobileThreshold } from '../theme/theme.constants';
+import { useScreenSize } from '../hooks/useScreenSize';
 
 const CopyTextarea = ({ text }) => {
+  const { width } = useScreenSize();
+
   const handleCopy = () => {
     navigator.clipboard
       .writeText(text)
@@ -25,7 +29,7 @@ const CopyTextarea = ({ text }) => {
 
   return (
     <Container>
-      <Textarea value={text} rows={3} cols={40} />
+      <Textarea value={text} rows={width > mobileThreshold ? 3 : 8} cols={40} />
       <Button onClick={handleCopy}>העתק תוכן</Button>
     </Container>
   );
@@ -46,12 +50,13 @@ const Container = styled.div`
 `;
 const Button = styled.button`
   display: block;
-  margin-top: 5px;
+  margin-top: 15px;
   width: 100%;
   padding: 4px;
   background-color: yellow;
   font-weight: bold;
   border-radius: 5px;
+  border: 0;
 `;
 
 export default CopyTextarea;

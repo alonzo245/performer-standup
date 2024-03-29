@@ -1,8 +1,9 @@
-import { FC, useEffect } from 'react';
-import topology from '../../config/topology';
 import styled from '@emotion/styled';
+import { FC, useEffect } from 'react';
 import CopyTextarea from '../../components/CopyTextarea';
 import Gallery from '../../components/Gallery';
+import topology from '../../config/topology';
+import { DESKTOP_MQ } from '../../theme/theme.constants';
 
 const Pr: FC = () => {
   const links = topology();
@@ -29,7 +30,9 @@ const Pr: FC = () => {
   const heb = `אלון אלוש סטנדאפיסט הייטקיסט שצוחק על ההייטק ועל כל מה שמחבר בין אנשים למחשבים במשרד.`;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 300);
   }, []);
 
   return (
@@ -59,6 +62,10 @@ const H5 = styled.div`
   padding: 0 20px;
   font-size: 30px;
   font-weight: bold;
+
+  ${DESKTOP_MQ} {
+    margin: 30px auto 20px auto;
+  }
 `;
 
 const Container = styled.div`
