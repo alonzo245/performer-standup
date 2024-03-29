@@ -11,6 +11,7 @@ import { Footer } from '../../views/footer';
 import { Header } from '../../views/header';
 import ComedySpecial from '../../components/ComedySpecial';
 import styled from '@emotion/styled';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Home: FC = () => {
   const containerRef = useRef(null);

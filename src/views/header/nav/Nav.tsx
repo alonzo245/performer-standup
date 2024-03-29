@@ -56,17 +56,22 @@ const Nav: FC = () => {
       </LinksRow>
       <NavList show={open}>
         <li>
-          <StyledAnchorLink href='/performer-standup#about' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/' onClick={() => setOpen(false)}>
+            ראשי
+          </StyledAnchorLink>
+        </li>
+        <li>
+          <StyledAnchorLink href='/#about' onClick={() => setOpen(false)}>
             אלון אלוש
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href='/performer-standup#show-types' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/#show-types' onClick={() => setOpen(false)}>
             סוגי מופעים
           </StyledAnchorLink>
         </li>
         <li>
-          <StyledAnchorLink href='/performer-standup#projects' onClick={() => setOpen(false)}>
+          <StyledAnchorLink href='/#projects' onClick={() => setOpen(false)}>
             סרטונים
           </StyledAnchorLink>
         </li>
@@ -154,6 +159,11 @@ const NavList = styled.ul<{ show: boolean }>`
   width: 100%;
   background-color: #000000;
   z-index: 2;
+  font-size: 27px;
+
+  & li {
+    padding: 6px;
+  }
 
   ${DESKTOP_MQ} {
     flex-direction: unset;
@@ -163,8 +173,12 @@ const NavList = styled.ul<{ show: boolean }>`
     list-style-type: none;
     width: 500px;
     justify-content: space-around;
-    font-size: 30px;
+    font-size: 27px;
     padding: 0;
+
+    & li {
+      padding: 0px;
+    }
 
     & > a {
       text-decoration: none;
@@ -192,9 +206,10 @@ const Logo = styled.img`
   }
 `;
 
-const StyledAnchorLink = styled(AnchorLink)`
+const StyledAnchorLink = styled.a`
   cursor: pointer;
   color: ${Colors.white};
+  margin: 5px;
 `;
 
 const Hamburger = styled.button`

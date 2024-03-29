@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Home, NotFound } from '../pages';
@@ -17,6 +17,18 @@ const queryClient = new QueryClient({
 });
 
 const IndexRouter: React.FC = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, 300);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Router>

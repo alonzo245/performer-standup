@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import topology from '../../config/topology';
 import styled from '@emotion/styled';
 import CopyTextarea from '../../components/CopyTextarea';
@@ -29,11 +29,11 @@ const Pr: FC = () => {
 🎤 Alon Alush, a code wizard and a standup comedian who's equally skilled at making you laugh and crafting software magic`;
 
   const heb = `אלון אלוש - סטנדאפיסט הייטקיסט
-  הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.
+  הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.`;
 
-נהנה לשתף סיפורים מצחיקים מהחיים השגרתיים על הצד המצחיק שלהם.
-
-`;
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
