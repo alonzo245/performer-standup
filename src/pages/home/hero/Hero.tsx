@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 
   return (
     <Container theme={theme}>
-      <Row>
+      <Row text={locale}>
         <H1 theme={theme} text={translations['Alon Alush']}>
           {translations['Alon Alush']}
         </H1>
@@ -172,12 +172,12 @@ const P = styled.p`
   }
 `;
 
-const Row = styled.div`
+const Row = styled.div<{ text: string }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 0px;
+  margin-left: 0;
   margin-bottom: 30px;
   z-index: 1;
 
@@ -185,7 +185,8 @@ const Row = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 80px;
+    margin-left: ${(p) => (p.text === 'heb' ? '80px' : '0px')};
+    margin-right: ${(p) => (p.text === 'heb' ? '0px' : '80px')};
     margin-bottom: 80px;
   }
 `;

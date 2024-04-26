@@ -26,12 +26,6 @@ const Nav: FC = () => {
   const [open, setOpen] = useState(false);
   const [iconsColor, setIconsColor] = useState('white');
 
-  const updateLocal = () => {
-    let lang = localStorage.getItem('locale') === 'heb' ? 'eng' : 'heb';
-    localStorage.setItem('locale', lang);
-    setLocale(lang);
-  };
-
   useEffect(() => {
     if (width > mobileThreshold) {
       setOpen(false);
