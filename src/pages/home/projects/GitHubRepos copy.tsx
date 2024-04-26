@@ -1,20 +1,23 @@
-import InfiniteScroll from "react-infinite-scroller";
-import styled from "@emotion/styled";
-import { Pagination } from "antd";
-import { useEffect, useState } from "react";
-import { useGlobalState } from "../../../context/useGlobalState";
-import { useThemeState } from "../../../context/useThemeState";
-import { THEMES, ThemeType } from "../../../theme";
-import Colors from "../../../theme/Colors";
-import { DESKTOP_MQ, mobileThreshold } from "../../../theme/theme.constants";
-import { Card } from "./card";
-import { useScreenSize } from "../../../hooks/useScreenSize";
+import InfiniteScroll from 'react-infinite-scroller';
+import styled from '@emotion/styled';
+import { Pagination } from 'antd';
+import { useEffect, useState } from 'react';
+import { useGlobalState } from '../../../context/useGlobalState';
+import { useThemeState } from '../../../context/useThemeState';
+import { THEMES, ThemeType } from '../../../theme';
+import Colors from '../../../theme/Colors';
+import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
+import { Card } from './card';
+import { useScreenSize } from '../../../hooks/useScreenSize';
+import { useLocalizationState } from '../../../context/useLocalizationState';
 
 const ITEMS_PER_PAGE = 6;
 
 const GitHubRepos: React.FC = () => {
   const { width } = useScreenSize();
   const { theme } = useThemeState();
+  const { translations } = useLocalizationState();
+
   const [items, setItems] = useState<Array<any>>([]);
   const [hasMore, setHasMore] = useState(true);
 
@@ -43,10 +46,7 @@ const GitHubRepos: React.FC = () => {
   };
 
   const fetchInfinitScrollData = () => {
-    const moreItems = repos?.slice(
-      items?.length,
-      items?.length + ITEMS_PER_PAGE
-    );
+    const moreItems = repos?.slice(items?.length, items?.length + ITEMS_PER_PAGE);
 
     if (hasMore && moreItems?.length > 0) {
       setItems([...items, ...moreItems]);
@@ -56,8 +56,10 @@ const GitHubRepos: React.FC = () => {
   };
 
   return (
-    <Container className="sub-section-alternative" id="projects">
-      <H2 theme={theme}>סרטונים</H2>
+    <Container className='sub-section-alternative' id='projects'>
+      <H2 theme={theme} text={translations['Videos']}>
+        {translations['Videos']}
+      </H2>
       {width > mobileThreshold ? (
         <>
           <Crads>
@@ -71,7 +73,6 @@ const GitHubRepos: React.FC = () => {
             defaultCurrent={1}
             total={repos?.length || 0}
             pageSize={ITEMS_PER_PAGE}
-            
           />
         </>
       ) : (
@@ -80,7 +81,7 @@ const GitHubRepos: React.FC = () => {
             pageStart={0}
             loadMore={fetchInfinitScrollData}
             hasMore={hasMore}
-            loader={<h4 key="loading">Loading...</h4>}
+            loader={<h4 key='loading'>Loading...</h4>}
           >
             <Crads>
               {(items || []).map((props: any, i: number) => {
@@ -152,7 +153,7 @@ const Crads = styled.div`
   }
 `;
 
-const H2 = styled.h2<{ theme: ThemeType }>`
+const H2 = styled.h2<{ theme: ThemeType; text: string }>`
   color: ${(p) => THEMES[p.theme.themeName]?.h2};
   font-size: 50px;
   font-weight: bolder;
@@ -162,7 +163,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   position: relative;
 
   &::after {
-    content: "סרטונים";
+    content: '${(p) => p.text}';
     color: ${Colors.white};
     z-index: 1;
     position: absolute;

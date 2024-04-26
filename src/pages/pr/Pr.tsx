@@ -4,9 +4,11 @@ import CopyTextarea from '../../components/CopyTextarea';
 import Gallery from '../../components/Gallery';
 import topology from '../../config/topology';
 import { DESKTOP_MQ } from '../../theme/theme.constants';
+import { useLocalizationState } from '../../context/useLocalizationState';
 
 const Pr: FC = () => {
   const links = topology();
+  const { translations } = useLocalizationState();
 
   const images = [
     { url: `${links.baseUrl}/images/pr/14.jpg` },
@@ -40,12 +42,12 @@ const Pr: FC = () => {
 
   return (
     <Container>
-      <H5>תוכן לפירסומים</H5>
+      <H5>{translations['PR Text Content']}</H5>
       <Row>
         <CopyTextarea text={heb} />
         <CopyTextarea text={eng} />
       </Row>
-      <H5>תמונות פירסומים להורדה</H5>
+      <H5>{translations['PR Images']}</H5>
       <Gallery images={images} />
     </Container>
   );

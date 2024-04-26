@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import topology from '../config/topology';
+import { useLocalizationState } from '../context/useLocalizationState';
 
 interface ImageGalleryProps {
   image: any;
@@ -9,6 +10,7 @@ interface ImageGalleryProps {
 
 const ImageGallery: React.FC<ImageGalleryProps> = ({ image }) => {
   const links = topology();
+  const { translations } = useLocalizationState();
 
   const [imageWidth, setImageWidth] = useState<any>(null);
   const [imageHeight, setImageHeight] = useState<any>(null);
@@ -66,7 +68,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ image }) => {
       <ImageWrapper>
         <Img src={image.url} />
         <Dimensions>{`${imageWidth}px X ${imageHeight}px`}</Dimensions>
-        <Button onClick={() => handleClick(image.url)}>הורדה</Button>
+        <Button onClick={() => handleClick(image.url)}>{translations['Download']}</Button>
       </ImageWrapper>
     </div>
   );

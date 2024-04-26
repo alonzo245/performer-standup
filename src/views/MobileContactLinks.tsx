@@ -7,6 +7,7 @@ import { DESKTOP_MQ, mobileThreshold } from '../theme/theme.constants';
 import { useDebouncedCallback } from 'use-debounce';
 import subscribe from 'subscribe-event';
 import { useScreenSize } from '../hooks/useScreenSize';
+import LocalFlagSwitcher from '../components/LocalFlagSwitcher';
 
 const MobileContactLinks: FC = () => {
   const { width } = useScreenSize();
@@ -41,6 +42,7 @@ const MobileContactLinks: FC = () => {
         <A href={FACEBOOK_LINK} target='_blank'>
           <FaFacebookSquare size={size} color={iconsColor} />
         </A>
+        <LocalFlagSwitcher />
       </Row>
     </Container>
   );

@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 import { FC, useEffect, useState } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import { FaBars, FaFacebookSquare, FaTiktok } from 'react-icons/fa';
 import { BsWhatsapp, BsYoutube } from 'react-icons/bs';
+import { FaBars, FaFacebookSquare, FaTiktok } from 'react-icons/fa';
 import topology from '../../../config/topology';
 import { useScreenSize } from '../../../hooks/useScreenSize';
 import {
@@ -13,12 +12,25 @@ import {
 } from '../../../pages/home/hero/Hero';
 import Colors from '../../../theme/Colors';
 import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
+import ReactCountryFlag from 'react-country-flag';
+import useLocalStorage from '../../../hooks/useLocalStorage';
+import { useLocalizationState } from '../../../context/useLocalizationState';
+import LocalFlagSwitcher from '../../../components/LocalFlagSwitcher';
 
 const Nav: FC = () => {
   const links = topology();
   const { width } = useScreenSize();
+  const { locale, setLocale, translations } = useLocalizationState();
+  // const [local, setLocal] = useLocalStorage('local');
+
   const [open, setOpen] = useState(false);
   const [iconsColor, setIconsColor] = useState('white');
+
+  const updateLocal = () => {
+    let lang = localStorage.getItem('locale') === 'heb' ? 'eng' : 'heb';
+    localStorage.setItem('locale', lang);
+    setLocale(lang);
+  };
 
   useEffect(() => {
     if (width > mobileThreshold) {
@@ -34,6 +46,8 @@ const Nav: FC = () => {
         {/* <A href={""}>
           <FaInstagramSquare size={30} color={iconsColor} />
         </A> */}
+        <LocalFlagSwitcher />
+
         {width > mobileThreshold && (
           <>
             <A href={WHATSAPP_LINK} target='_blank'>
@@ -50,6 +64,7 @@ const Nav: FC = () => {
             </A>
           </>
         )}
+
         <a href={'https://standup.alonalush.com'}>
           <Logo src={`${links.baseUrl}/images/logo.png`} alt='Full-Stack Developer' />
         </a>
@@ -57,22 +72,22 @@ const Nav: FC = () => {
       <NavList show={open}>
         <li>
           <StyledAnchorLink href='/' onClick={() => setOpen(false)}>
-            ראשי
+            {translations['Main']}
           </StyledAnchorLink>
         </li>
         <li>
           <StyledAnchorLink href='/#about' onClick={() => setOpen(false)}>
-            אלון אלוש
+            {translations['Alon Alush']}
           </StyledAnchorLink>
         </li>
         <li>
           <StyledAnchorLink href='/#show-types' onClick={() => setOpen(false)}>
-            סוגי מופעים
+            {translations['Shows']}
           </StyledAnchorLink>
         </li>
         <li>
           <StyledAnchorLink href='/#projects' onClick={() => setOpen(false)}>
-            סרטונים
+            {translations['Videos']}
           </StyledAnchorLink>
         </li>
         {/* <li>
@@ -160,6 +175,7 @@ const NavList = styled.ul<{ show: boolean }>`
   background-color: #000000;
   z-index: 2;
   font-size: 27px;
+  left: 0;
 
   & li {
     padding: 6px;
@@ -168,7 +184,7 @@ const NavList = styled.ul<{ show: boolean }>`
   ${DESKTOP_MQ} {
     flex-direction: unset;
     background-color: transparent;
-    margin: 30px 0;
+    margin: 30px 20px;
     display: flex;
     list-style-type: none;
     width: 500px;
@@ -196,7 +212,7 @@ const Logo = styled.img`
   display: inline;
   height: 40px;
   width: 40px;
-  margin: 20px;
+  margin: 10px;
   border-radius: 40px;
 
   ${DESKTOP_MQ} {

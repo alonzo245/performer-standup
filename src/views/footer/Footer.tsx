@@ -12,33 +12,42 @@ import {
 import { THEMES, ThemeType } from '../../theme';
 import { DESKTOP_MQ } from '../../theme/theme.constants';
 import { NavLink } from 'react-router-dom';
+import { useLocalizationState } from '../../context/useLocalizationState';
+import LocalFlagSwitcher from '../../components/LocalFlagSwitcher';
 
 const Footer: React.FC = () => {
   const { theme } = useThemeState();
+  const { translations } = useLocalizationState();
 
   return (
     <Container id='contact-me' theme={theme}>
-      <H5>אלון אלוש</H5>
+      <H5>{translations['Alon Alush']}</H5>
       <P>
-        <span>יצירת קשר</span> |{' '}
-        <StyledNavLink to={'/performer-standup/pr'}>יחסי ציבור</StyledNavLink>
+        <span>{translations['Contact Me']}</span> |{' '}
+        <StyledNavLink to={'/performer-standup/pr'}>
+          {translations['Public relations']}
+        </StyledNavLink>
       </P>
       <Row>
+        <Link data-tip data-for='github'>
+          <LocalFlagSwitcher />
+          <AltText>{translations['Language']}</AltText>
+        </Link>
         <Link href={WHATSAPP_LINK} data-tip data-for='github'>
           <RiWhatsappFill color='#fff' size={45} />
-          <AltText>וואטסאפ</AltText>
+          <AltText>{translations['WhatsApp']}</AltText>
         </Link>
         <Link href={FACEBOOK_LINK} target='_blank' data-tip data-for='github'>
           <BsFacebook color='#fff' size={40} />
-          <AltText>פייסבוק</AltText>
+          <AltText>{translations['Facebook']}</AltText>
         </Link>
         <Link href={YOUTUBE_LINK} target='_blank'>
           <BsYoutube size={30} color='#fff' />
-          <AltText>יוטיוב</AltText>
+          <AltText>{translations['YouTube']}</AltText>
         </Link>
         <Link href={TIKTOK_LINK} target='_blank'>
           <FaTiktok size={30} color='#fff' />
-          <AltText>טיקטוק</AltText>
+          <AltText>{translations['TikTok']}</AltText>
         </Link>
       </Row>
     </Container>

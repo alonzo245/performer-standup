@@ -2,9 +2,11 @@ import styled from '@emotion/styled';
 import { toast } from 'react-toastify';
 import { mobileThreshold } from '../theme/theme.constants';
 import { useScreenSize } from '../hooks/useScreenSize';
+import { useLocalizationState } from '../context/useLocalizationState';
 
 const CopyTextarea = ({ text }) => {
   const { width } = useScreenSize();
+  const { translations } = useLocalizationState();
 
   const handleCopy = () => {
     navigator.clipboard
@@ -30,7 +32,7 @@ const CopyTextarea = ({ text }) => {
   return (
     <Container>
       <Textarea value={text} rows={width > mobileThreshold ? 3 : 8} cols={40} />
-      <Button onClick={handleCopy}>העתק תוכן</Button>
+      <Button onClick={handleCopy}>{translations['Videos']}</Button>
     </Container>
   );
 };

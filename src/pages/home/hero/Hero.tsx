@@ -8,6 +8,7 @@ import { DESKTOP_MQ, mobileThreshold } from '../../../theme/theme.constants';
 import topology from '../../../config/topology';
 import ComedySpecial from '../../../components/ComedySpecial';
 import { useScreenSize } from '../../../hooks/useScreenSize';
+import { useLocalizationState } from '../../../context/useLocalizationState';
 
 export const FACEBOOK_LINK = 'https://www.facebook.com/alonalush';
 export const WHATSAPP_LINK =
@@ -20,15 +21,18 @@ const Hero: React.FC = () => {
   const links = topology();
   const { theme } = useThemeState();
   const { width } = useScreenSize();
+  const { locale, translations } = useLocalizationState();
 
   return (
     <Container theme={theme}>
       <Row>
-        <H1 theme={theme}>אלון אלוש</H1>
-        <P>סטנדאפיסט הייטקיסט מנחה</P>
+        <H1 theme={theme} text={translations['Alon Alush']}>
+          {translations['Alon Alush']}
+        </H1>
+        <P></P>
         <div style={{ display: 'flex' }}>
           <StyledAnchorLink href='#about' theme={theme}>
-            מידע נוסף
+            {translations['More Info']}
           </StyledAnchorLink>
           {/* <StyledAnchorLink href="#contact-me" theme={theme}> */}
           <A
@@ -40,15 +44,15 @@ const Hero: React.FC = () => {
             bgColor='#00D25D'
             color='#ffffff'
           >
-            וואטסאפ
+            {translations['WhatsApp']}
           </A>
         </div>
 
         {width > mobileThreshold && <ComedySpecial />}
       </Row>
       <RowContact>
-        <Alon />
-        <Img src={`${links.baseUrl}/images/alon.png`} />
+        <Alon text={locale} />
+        <Img src={`${links.baseUrl}/images/alon.png`} text={locale} />
 
         {/* <Link href={CV_LINK} data-tip data-for="cv">
                     <StyledIoDocumentAttachOutline color={Colors.white} size={50} />
@@ -75,7 +79,7 @@ const Hero: React.FC = () => {
 
 export default Hero;
 
-const Img = styled.img`
+const Img = styled.img<{ text: string }>`
   height: 85%;
   transform-origin: bottom center;
   position: absolute;
@@ -87,12 +91,13 @@ const Img = styled.img`
   ${DESKTOP_MQ} {
     transform-origin: bottom center;
     height: 120%;
-    left: 10%;
+    left: ${(p) => (p.text === 'heb' ? '10%' : 'unset')};
+    right: ${(p) => (p.text === 'heb' ? 'unset' : '5px')};
     transform: unset;
   }
 `;
 
-const Alon = styled.div`
+const Alon = styled.div<{ text: string }>`
   height: 900px;
   width: 900px;
   border-radius: 50%;
@@ -105,8 +110,8 @@ const Alon = styled.div`
   ${DESKTOP_MQ} {
     transform: unset;
     bottom: 0px;
-    left: 0%;
-    right: unset;
+    left: ${(p) => (p.text === 'heb' ? '0%' : 'unset')};
+    right: ${(p) => (p.text === 'heb' ? 'unset' : '0%')};
   }
 `;
 
@@ -130,7 +135,7 @@ export const StyledIoDocumentAttachOutline = styled(IoDocumentAttachOutline)`
   cursor: pointer;
 `;
 
-const H1 = styled.h1<{ theme: ThemeType }>`
+const H1 = styled.h1<{ theme: ThemeType; text: string }>`
   font-weight: bolder;
   font-size: 60px;
   /* margin-top: 10px; */
@@ -145,7 +150,7 @@ const H1 = styled.h1<{ theme: ThemeType }>`
   }
 
   &::after {
-    content: 'אלון אלוש';
+    content: '${(p) => p.text}';
     color: yellow;
     z-index: 1;
     position: absolute;

@@ -4,21 +4,25 @@ import { useThemeState } from '../../../context/useThemeState';
 import { THEMES, ThemeType } from '../../../theme';
 import Colors from '../../../theme/Colors';
 import { DESKTOP_MQ } from '../../../theme/theme.constants';
+import { useLocalizationState } from '../../../context/useLocalizationState';
 
 const AboutMe: React.FC = () => {
   const links = topology();
   const { theme } = useThemeState();
+  const { translations } = useLocalizationState();
 
   return (
     <Container id='about'>
-      <H2 theme={theme}>אלון אלוש</H2>
+      <H2 theme={theme} text={translations['Alon Alush']}>
+        {translations['Alon Alush']}
+      </H2>
       <Row>
-        <Img src={`${links.baseUrl}/images/img2.png`} alt='אלון אלוש' />
+        <Img src={`${links.baseUrl}/images/img2.png`} alt={translations['Alon Alush']} />
         <Article>
-          <P>הייטקיסט וסטנדאפיסט שמוצא את הצחוק במשרד ובחייו האישיים.</P>
-          <P>נהנה לשתף סיפורים מצחיקים מהחיים השגרתיים על הצד המצחיק שלהם.</P>
-          <P>המופע מתאים לערבי גיבוש עובדים, ימי כיף, כנסים, אירועי חברה וימי הולדת.</P>
-          <P>בואו נצחק ביחד באירוע הבא.</P>
+          <P>{translations['about-1']}</P>
+          <P>{translations['about-2']}</P>
+          <P>{translations['about-3']}</P>
+          <P>{translations['about-4']}</P>
         </Article>
       </Row>
     </Container>
@@ -37,7 +41,7 @@ const Container = styled.section`
   }
 `;
 
-const H2 = styled.h2<{ theme: ThemeType }>`
+const H2 = styled.h2<{ theme: ThemeType; text: string }>`
   color: ${(p) => THEMES[p.theme.themeName]?.h2};
   display: block;
   font-size: 50px;
@@ -47,7 +51,7 @@ const H2 = styled.h2<{ theme: ThemeType }>`
   margin: 10px auto;
 
   &::after {
-    content: 'אלון אלוש';
+    content: '${(p) => p.text}';
     color: ${Colors.white};
     z-index: 1;
     position: absolute;

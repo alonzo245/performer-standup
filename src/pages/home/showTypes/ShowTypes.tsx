@@ -5,47 +5,56 @@ import { useThemeState } from '../../../context/useThemeState';
 import { THEMES, ThemeType } from '../../../theme';
 import Colors from '../../../theme/Colors';
 import { DESKTOP_MQ } from '../../../theme/theme.constants';
+import { useLocalizationState } from '../../../context/useLocalizationState';
 
 const AboutMe: React.FC = () => {
   const { theme } = useThemeState();
+  const { translations } = useLocalizationState();
 
   return (
     <Container id='show-types'>
-      <H3 theme={theme}>סוגי מופעים</H3>
+      <H3 theme={theme} text={translations['Shows']}>
+        {translations['Shows']}
+      </H3>
       <Row>
         <Article>
           <Circle>
             <GiTheater size={40} color='yellow' />
           </Circle>{' '}
-          <P size={30}>סטנדאפ וגיבוש עובדים</P>
-          <P size={19}>אירוע שמחבר צוותי עבודה בצורה מבדרת, קלילה והומוריסטית.</P>
+          <P size={30}>{translations['Corporate Stand-Up']}</P>
+          {translations['Corporate Stand-Up TEXT'] && (
+            <P size={19}>{translations['Corporate Stand-Up TEXT']}</P>
+          )}
         </Article>
 
         <Article>
           <Circle>
             <FaTheaterMasks size={40} color='yellow' />
           </Circle>
-          <P size={30}>סטנדאפ אישי</P>
-          <P size={19}>
-            מופע הומוריסטי על החיים, נישואים, ילדים ועל מה שבניהם, ניתן להתאים את אופי המופע לפי
-            דרישות מראש.
-          </P>
+          <P size={30}>{translations['Custom Theme Show']}</P>
+          {translations['Custom Theme Show TEXT'] && (
+            <P size={19}>{translations['Custom Theme Show TEXT']}</P>
+          )}
         </Article>
 
         <Article>
           <Circle>
             <FaBirthdayCake size={40} color='yellow' />
-          </Circle>{' '}
-          <P size={30}>סטנדאפ לאירוע משפחתי</P>
-          <P size={19}>סטנדאפ אישי על המשפחה של בעל/ת האירוע נציף את המצחיק מהסיפורים האישיים.</P>
+          </Circle>
+          <P size={30}>{translations['Family Events']}</P>
+          {translations['Family Events TEXT'] && (
+            <P size={19}>{translations['Family Events TEXT']}</P>
+          )}
         </Article>
 
         <Article>
           <Circle>
             <FaTheaterMasks size={40} color='yellow' />
-          </Circle>{' '}
-          <P size={30}>הנחיית אירועים</P>
-          <P size={19}>יצירת עיניין לקהל והתאמה שלו לפי אופי האירוע והקהל.</P>
+          </Circle>
+          <P size={30}>{translations['Events Hosting']}</P>
+          {translations['Events Hosting TEXT'] && (
+            <P size={19}>{translations['Events Hosting TEXT']}</P>
+          )}
         </Article>
       </Row>
     </Container>
@@ -69,7 +78,7 @@ const Container = styled.section`
   }
 `;
 
-const H3 = styled.h3<{ theme: ThemeType }>`
+const H3 = styled.h3<{ theme: ThemeType; text: string }>`
   color: ${(p) => THEMES[p.theme.themeName]?.h2};
   display: block;
   font-size: 50px;
@@ -79,7 +88,7 @@ const H3 = styled.h3<{ theme: ThemeType }>`
   margin: 10px auto 0px auto;
 
   &::after {
-    content: 'סוגי מופעים';
+    content: '${(p) => p.text}';
     color: ${Colors.white};
     z-index: 1;
     position: absolute;
