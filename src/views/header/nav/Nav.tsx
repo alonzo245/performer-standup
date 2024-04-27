@@ -229,7 +229,7 @@ const Hamburger = styled.button`
   background-color: transparent;
   color: white;
   font-size: 30px;
-  margin: 20px;
+  margin: 20px 0;
   align-items: center;
   height: 30px;
 

@@ -17,7 +17,7 @@ const App: FC = () => {
     } else {
       document.body.style.direction = localStorage.getItem('locale') === 'eng' ? 'ltr' : 'rtl';
     }
-  }, []);
+  }, [locale]);
 
   return (
     <>
