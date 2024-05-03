@@ -52,7 +52,7 @@ const Home: FC = () => {
       )}
       <AboutMe />
       <ShowTypes />
-      {width < mobileThreshold && <Footer />}
+      {location.pathname === '/main' && width < mobileThreshold && <Footer />}
       {location.pathname === '/main' && <GitHubRepos />}
     </div>
   );
