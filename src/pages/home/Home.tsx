@@ -12,12 +12,15 @@ import { Header } from '../../views/header';
 import ComedySpecial from '../../components/ComedySpecial';
 import styled from '@emotion/styled';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import { useLocation } from 'react-router-dom';
 
 const Home: FC = () => {
   const containerRef = useRef(null);
   const { width } = useScreenSize();
   const links = topology();
   const { setGlobalState } = useGlobalState();
+  const location = useLocation();
+
   const { isLoading } = useQuery(
     'repos',
     () => {
@@ -50,7 +53,7 @@ const Home: FC = () => {
       <AboutMe />
       <ShowTypes />
       {width < mobileThreshold && <Footer />}
-      <GitHubRepos />
+      {location.pathname === '/main' && <GitHubRepos />}
     </div>
   );
 };

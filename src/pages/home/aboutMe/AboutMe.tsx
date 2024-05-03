@@ -19,10 +19,18 @@ const AboutMe: React.FC = () => {
       <Row>
         <Img src={`${links.baseUrl}/images/img2.png`} alt={translations['Alon Alush']} />
         <Article>
-          <P>{translations['about-1']}</P>
-          <P>{translations['about-2']}</P>
-          <P>{translations['about-3']}</P>
-          <P>{translations['about-4']}</P>
+          {translations['about-1'] && (
+            <P dangerouslySetInnerHTML={{ __html: translations['about-1'] }} />
+          )}
+          {translations['about-2'] && (
+            <P dangerouslySetInnerHTML={{ __html: translations['about-2'] }} />
+          )}
+          {translations['about-3'] && (
+            <P dangerouslySetInnerHTML={{ __html: translations['about-3'] }} />
+          )}
+          {translations['about-4'] && (
+            <P dangerouslySetInnerHTML={{ __html: translations['about-4'] }} />
+          )}
         </Article>
       </Row>
     </Container>
@@ -89,11 +97,12 @@ const Row = styled.div`
 
   ${DESKTOP_MQ} {
     flex-direction: row-reverse;
+    align-items: start;
   }
 `;
 
 const P = styled.p`
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   font-size: 22px;
   font-weight: 300;
   width: 100%;
@@ -101,10 +110,13 @@ const P = styled.p`
   &:last-child {
     margin-bottom: 0;
   }
+  & ul {
+    list-style: circle;
+  }
 
   ${DESKTOP_MQ} {
-    margin-bottom: 30px;
-    font-size: 30px;
+    margin-bottom: 5px;
+    font-size: 20px !important;
     font-weight: 300;
     font-size: 25px;
   }
