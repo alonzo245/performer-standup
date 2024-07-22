@@ -1,18 +1,19 @@
-import styled from "@emotion/styled";
-import { DESKTOP_MQ } from "../theme/theme.constants";
+import styled from '@emotion/styled';
+import { DESKTOP_MQ } from '../theme/theme.constants';
 
 const ComedySpecial: React.FC = () => {
   return (
     <IframeContainer>
       <iframe
-        style={{ margin: "0 auto", border: "9px solid yellow" }}
-        width="440"
-        height="260"
-        src="https://www.youtube.com/embed/EExve0k-iJ8?si=6Ohsblm9-PIw6DST&showinfo=0"
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+        style={{ margin: '0 auto', border: '9px solid yellow' }}
+        width='440'
+        height='260'
+        src='https://www.youtube.com/embed/nUJFT6Q2AnI?si=6Ohsblm9-PIw6DST&showinfo=0'
+        title='YouTube video player'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;'
         allowFullScreen={true}
       />
+
       {/* <iframe
         style={{ margin: "0 auto", border: "9px solid yellow" }}
         width="260"

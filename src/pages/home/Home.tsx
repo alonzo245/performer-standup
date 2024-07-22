@@ -13,6 +13,7 @@ import ComedySpecial from '../../components/ComedySpecial';
 import styled from '@emotion/styled';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { useLocation } from 'react-router-dom';
+import MoreVideos from './aboutMe/MoreVideos';
 
 const Home: FC = () => {
   const containerRef = useRef(null);
@@ -50,6 +51,8 @@ const Home: FC = () => {
           <ComedySpecial />
         </div>
       )}
+
+      <MoreVideos />
       <AboutMe />
       <ShowTypes />
       {location.pathname === '/main' && width < mobileThreshold && <Footer />}
